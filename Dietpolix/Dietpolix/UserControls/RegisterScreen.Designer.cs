@@ -32,10 +32,10 @@
             this.labelName = new System.Windows.Forms.Label();
             this.labelPassword1 = new System.Windows.Forms.Label();
             this.labelPassword2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxPassword1 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword2 = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -75,39 +75,39 @@
             this.labelPassword2.TabIndex = 3;
             this.labelPassword2.Text = "Password:";
             // 
-            // textBox1
+            // textBoxLogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(102, 14);
-            this.textBox1.MaxLength = 16;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.textBoxLogin.Location = new System.Drawing.Point(102, 14);
+            this.textBoxLogin.MaxLength = 16;
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLogin.TabIndex = 4;
             // 
-            // textBox2
+            // textBoxName
             // 
-            this.textBox2.Location = new System.Drawing.Point(102, 40);
-            this.textBox2.MaxLength = 16;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.textBoxName.Location = new System.Drawing.Point(102, 40);
+            this.textBoxName.MaxLength = 16;
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxName.TabIndex = 6;
             // 
-            // textBox3
+            // textBoxPassword1
             // 
-            this.textBox3.Location = new System.Drawing.Point(102, 66);
-            this.textBox3.MaxLength = 32;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.textBoxPassword1.Location = new System.Drawing.Point(102, 66);
+            this.textBoxPassword1.MaxLength = 32;
+            this.textBoxPassword1.Name = "textBoxPassword1";
+            this.textBoxPassword1.PasswordChar = '*';
+            this.textBoxPassword1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPassword1.TabIndex = 7;
             // 
-            // textBox4
+            // textBoxPassword2
             // 
-            this.textBox4.Location = new System.Drawing.Point(102, 92);
-            this.textBox4.MaxLength = 32;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 8;
+            this.textBoxPassword2.Location = new System.Drawing.Point(102, 92);
+            this.textBoxPassword2.MaxLength = 32;
+            this.textBoxPassword2.Name = "textBoxPassword2";
+            this.textBoxPassword2.PasswordChar = '*';
+            this.textBoxPassword2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPassword2.TabIndex = 8;
             // 
             // buttonRegister
             // 
@@ -123,10 +123,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.buttonRegister);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPassword2);
+            this.Controls.Add(this.textBoxPassword1);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.labelPassword2);
             this.Controls.Add(this.labelPassword1);
             this.Controls.Add(this.labelName);
@@ -144,10 +144,10 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelPassword1;
         private System.Windows.Forms.Label labelPassword2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxPassword1;
+        private System.Windows.Forms.TextBox textBoxPassword2;
         private System.Windows.Forms.Button buttonRegister;
     }
 }
