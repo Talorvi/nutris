@@ -87,6 +87,7 @@
             this.linkLabelRegister.TabIndex = 6;
             this.linkLabelRegister.TabStop = true;
             this.linkLabelRegister.Text = "Register here";
+            this.linkLabelRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRegister_LinkClicked);
             // 
             // LoginScreen
             // 

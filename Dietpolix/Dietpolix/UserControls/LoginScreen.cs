@@ -43,8 +43,17 @@ namespace Dietpolix
                 textBoxPassword.Text = value;
             }
         }
+        //public FormDietpolix
 
         public event Action<object, EventArgs> VEvent_OnLogIn;
         public event Action<object, EventArgs> VEvent_OnRegisterLink;
+
+        private void linkLabelRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (VEvent_OnRegisterLink != null)
+            {
+                VEvent_OnRegisterLink(sender, e);
+            }
+        }
     }
 }

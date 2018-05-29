@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Classes\Managers\APIManager.cs" />
     <Compile Include="Classes\Consumption.cs" />
+    <Compile Include="Classes\Managers\ControlsManagers.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Models\Model.cs" />

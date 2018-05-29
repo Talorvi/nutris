@@ -13,5 +13,6 @@ namespace Dietpolix.Views
 
         string Login { get; set; }
         string Password { get; set; }
+        //.ControlCollection formdietpolix { get; set; }
     }
 }
