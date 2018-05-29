@@ -16,9 +16,11 @@ namespace Dietpolix
         public FormDietpolix()
         {
             InitializeComponent();
-            DrawPieChart(2,5,3,4,1);
+            LoginScreen loginScreen = new LoginScreen();
+            groupBox.Controls.Add(loginScreen);
+            //DrawPieChart(2,5,3,4,1);
         }
-        private void DrawPieChart(int value1, int value2, int value3, int value4, int value5)
+        /*private void DrawPieChart(int value1, int value2, int value3, int value4, int value5)
         {
             //reset your chart series and legends
             chart1.Series.Clear();
@@ -44,6 +46,6 @@ namespace Dietpolix
             chart1.Series[seriesname].Points.AddXY("MyPointName2", value3);
             chart1.Series[seriesname].Points.AddXY("MyPointName3", value4);
             chart1.Series[seriesname].Points.AddXY("MyPointName4", value5);
-        }
+        }*/
     }
 }
