@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dietpolix.Classes
+namespace Dietpolix.Classes.Managers
 {
     public class APIManager
     {
