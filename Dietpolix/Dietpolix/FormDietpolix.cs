@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Dietpolix.Classes.Managers;
 using Dietpolix.UserControls;
+using Dietpolix.Models;
+using Dietpolix.Presenters;
 
 namespace Dietpolix
 {
@@ -19,7 +21,9 @@ namespace Dietpolix
         {
             InitializeComponent();
             LoginScreen loginScreen = new LoginScreen();
-            RegisterScreen registerscreen = new RegisterScreen();
+            Model model = new Model();
+            LoginScreenPresenter loginscreenpresenter = new LoginScreenPresenter(model, loginScreen);
+            UserControls.RegisterScreen registerscreen = new UserControls.RegisterScreen();
             groupBox.Controls.Add(loginScreen);
             DatabaseManager databasemanager = new DatabaseManager();
             //DrawPieChart(2,5,3,4,1);

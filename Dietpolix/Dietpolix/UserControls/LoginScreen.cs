@@ -43,6 +43,13 @@ namespace Dietpolix
                 textBoxPassword.Text = value;
             }
         }
+        public Control FormDietpolix
+        {
+            get
+            {
+                return this.Parent;
+            }
+        }
         //public FormDietpolix
 
         public event Action<object, EventArgs> VEvent_OnLogIn;

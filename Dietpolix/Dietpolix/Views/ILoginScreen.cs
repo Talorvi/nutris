@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Dietpolix.Views
 {
@@ -13,6 +14,6 @@ namespace Dietpolix.Views
 
         string Login { get; set; }
         string Password { get; set; }
-        //.ControlCollection formdietpolix { get; set; }
+        Control FormDietpolix { get; }
     }
 }

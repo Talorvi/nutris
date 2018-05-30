@@ -23,7 +23,7 @@ namespace Dietpolix.Presenters
 
         private void View_VEvent_OnRegisterLink(object arg1, EventArgs arg2)
         {
-            
+            loginscreen.FormDietpolix.Hide();
         }
     }
 }

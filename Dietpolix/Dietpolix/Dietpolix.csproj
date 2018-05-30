@@ -74,6 +74,7 @@
     <Compile Include="Models\Model.cs" />
     <Compile Include="Presenters\CalendarScreenPresenter.cs" />
     <Compile Include="Presenters\DietScreenPresenter.cs" />
+    <Compile Include="Presenters\FormDietpolixPresenter.cs" />
     <Compile Include="Presenters\LoginScreenPresenter.cs" />
     <Compile Include="Presenters\MainScreenPresenter.cs" />
     <Compile Include="Presenters\RegisterScreen.cs" />
@@ -132,6 +133,7 @@
     </Compile>
     <Compile Include="Views\ICalendarScreen.cs" />
     <Compile Include="Views\IDietScreencs.cs" />
+    <Compile Include="Views\IFormDietpolix.cs" />
     <Compile Include="Views\ILoginScreen.cs" />
     <Compile Include="Views\IMainScreen.cs" />
     <Compile Include="Views\IRegisterScreen.cs" />
