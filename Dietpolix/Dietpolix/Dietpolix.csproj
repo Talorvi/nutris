@@ -142,6 +142,9 @@
     <EmbeddedResource Include="FormDietpolix.resx">
       <DependentUpon>FormDietpolix.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CalendarScreen.resx">
+      <DependentUpon>CalendarScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
