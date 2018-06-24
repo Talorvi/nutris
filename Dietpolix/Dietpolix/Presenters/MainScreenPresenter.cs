@@ -1,6 +1,6 @@
 ﻿namespace Dietpolix.Presenters
 {
-    public class MainScreenPresenterr
+    public class MainScreenPresenter
     {
     }
 }

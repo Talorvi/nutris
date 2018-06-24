@@ -1,4 +1,10 @@
-﻿using System.Windows.Forms;
+﻿using Dietpolix.Models;
+using Dietpolix.Presenters;
+using Dietpolix.UserControls;
+using Dietpolix.Views;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Dietpolix
 {
@@ -7,19 +13,46 @@ namespace Dietpolix
         public FormDietpolix()
         {
             InitializeComponent();
-            //LoginScreen loginScreen = new LoginScreen();
-            //Model model = new Model();
-            //LoginScreenPresenter loginscreenpresenter = new LoginScreenPresenter(model, loginScreen);
-            //UserControls.RegisterScreen registerscreen = new UserControls.RegisterScreen();
-            //groupBox.Controls.Add(loginScreen);
-            //DatabaseManager databasemanager = new DatabaseManager();
+            OnStart();
+            groupBox.Controls.AddRange(ListOfObjects.ToArray());
+            SetUserControl(2);
             //DrawPieChart(2,5,3,4,1);
         }
-        public void SetUserControl(UserControl usercontrol)
+        public void SetUserControl(int id)
         {
-            groupBox.Controls.Clear();
-            groupBox.Controls.Add(usercontrol);
+            foreach(UserControl usercontrol in groupBox.Controls)
+            {
+                usercontrol.Hide();
+            }
+            groupBox.Controls[id].Show();
+            
         }
+
+        private List<UserControl> ListOfObjects = new List<UserControl>();
+        Model model = new Model();
+
+        private void OnStart()
+        {
+            CalendarScreen calendarscreen = new CalendarScreen();            // 0
+            DietScreen dietscreen = new DietScreen();                        // 1
+            LoginScreen loginscreen = new LoginScreen(this);                 // 2
+            MainScreen mainscreen = new MainScreen();                        // 3
+            RegisterScreen registerscreen = new RegisterScreen();            // 4
+            SearchScreen searchscreen = new SearchScreen();                  // 5
+            UserProfileScreen userprofilescreen = new UserProfileScreen();   // 6
+
+            UserControl[] ArrayOfObjects = { calendarscreen, dietscreen, loginscreen, mainscreen, registerscreen, searchscreen, userprofilescreen };
+            ListOfObjects.AddRange(ArrayOfObjects);
+
+            CalendarScreenPresenter calendarscreenpresenter = new CalendarScreenPresenter();       
+            DietScreenPresenter dietscreenpresenter = new DietScreenPresenter();
+            LoginScreenPresenter loginscreenpresenter = new LoginScreenPresenter(model, (LoginScreen)ListOfObjects[2]);
+            MainScreenPresenter mainscreenpresenter = new MainScreenPresenter();                       
+            RegisterScreenPresenter registerscreenpresenter = new RegisterScreenPresenter();            
+            SearchScreenPresenter searchscreenpresenter = new SearchScreenPresenter();                  
+            UserProfileScreenPresenter userprofilescreenpresenter = new UserProfileScreenPresenter();   
+        }
+        
         /*private void DrawPieChart(int value1, int value2, int value3, int value4, int value5)
         {
             //reset your chart series and legends

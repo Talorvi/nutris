@@ -76,7 +76,7 @@
     <Compile Include="Presenters\FormDietpolixPresenter.cs" />
     <Compile Include="Presenters\LoginScreenPresenter.cs" />
     <Compile Include="Presenters\MainScreenPresenter.cs" />
-    <Compile Include="Presenters\RegisterScreen.cs" />
+    <Compile Include="Presenters\RegisterScreenPresenter.cs" />
     <Compile Include="Presenters\SearchScreenPresenster.cs" />
     <Compile Include="Presenters\UserProfileScreenPresenter.cs" />
     <Compile Include="UserControls\CalendarScreen.cs">

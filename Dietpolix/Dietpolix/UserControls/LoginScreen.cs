@@ -6,9 +6,11 @@ namespace Dietpolix
 {
     public partial class LoginScreen : UserControl, ILoginScreen
     {
-        public LoginScreen()
+        FormDietpolix parent;
+        public LoginScreen(FormDietpolix parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
 
         public string Login
@@ -43,14 +45,23 @@ namespace Dietpolix
                 return this.Parent;
             }
         }
+
+        FormDietpolix ILoginScreen.parent
+        {
+            get
+            {
+                return parent;
+            }
+        }
+
         //public FormDietpolix
 
         public event Action<object, EventArgs> VEvent_OnLogIn;
-        public event Action<object, EventArgs> VEvent_OnRegisterLink;
+        public event EventHandler VEvent_OnRegisterLink;
 
         private void linkLabelRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (VEvent_OnRegisterLink != null)
+            if (this.VEvent_OnRegisterLink != null)
             {
                 VEvent_OnRegisterLink(sender, e);
             }

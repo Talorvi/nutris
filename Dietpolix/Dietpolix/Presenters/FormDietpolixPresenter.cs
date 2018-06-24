@@ -1,6 +1,6 @@
 ﻿namespace Dietpolix.Presenters
 {
-    class FormDietpolixPresenterr
+    class FormDietpolixPresenter
     {
     }
 }
