@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dietpolix.Models;
 using Dietpolix.Views;
 
@@ -23,7 +19,7 @@ namespace Dietpolix.Presenters
 
         private void View_VEvent_OnRegisterLink(object arg1, EventArgs arg2)
         {
-            loginscreen.FormDietpolix.Hide();
+            //loginscreen.FormDietpolix.Hide();
         }
     }
 }

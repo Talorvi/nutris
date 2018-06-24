@@ -50,7 +50,7 @@
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Visual2015\Common7\IDE\MySql.Data.dll</HintPath>
+      <HintPath>bin\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -66,9 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Managers\APIManager.cs" />
     <Compile Include="Classes\Consumption.cs" />
-    <Compile Include="Classes\Managers\ControlsManagers.cs" />
+    <Compile Include="Classes\Managers\ControlsManager.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Models\Model.cs" />

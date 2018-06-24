@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
-using Dietpolix.Classes.Managers;
-using Dietpolix.UserControls;
-using Dietpolix.Models;
-using Dietpolix.Presenters;
+﻿using System.Windows.Forms;
 
 namespace Dietpolix
 {
@@ -20,13 +7,18 @@ namespace Dietpolix
         public FormDietpolix()
         {
             InitializeComponent();
-            LoginScreen loginScreen = new LoginScreen();
-            Model model = new Model();
-            LoginScreenPresenter loginscreenpresenter = new LoginScreenPresenter(model, loginScreen);
-            UserControls.RegisterScreen registerscreen = new UserControls.RegisterScreen();
-            groupBox.Controls.Add(loginScreen);
-            DatabaseManager databasemanager = new DatabaseManager();
+            //LoginScreen loginScreen = new LoginScreen();
+            //Model model = new Model();
+            //LoginScreenPresenter loginscreenpresenter = new LoginScreenPresenter(model, loginScreen);
+            //UserControls.RegisterScreen registerscreen = new UserControls.RegisterScreen();
+            //groupBox.Controls.Add(loginScreen);
+            //DatabaseManager databasemanager = new DatabaseManager();
             //DrawPieChart(2,5,3,4,1);
+        }
+        public void SetUserControl(UserControl usercontrol)
+        {
+            groupBox.Controls.Clear();
+            groupBox.Controls.Add(usercontrol);
         }
         /*private void DrawPieChart(int value1, int value2, int value3, int value4, int value5)
         {

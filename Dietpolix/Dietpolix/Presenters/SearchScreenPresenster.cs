@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dietpolix.Presenters
+﻿namespace Dietpolix.Presenters
 {
-    public class SearchScreenPresenster
+    public class SearchScreenPresensterr
     {
     }
 }
