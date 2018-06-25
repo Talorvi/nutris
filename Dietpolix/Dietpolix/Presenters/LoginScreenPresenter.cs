@@ -15,6 +15,12 @@ namespace Dietpolix.Presenters
             this.loginscreen = loginscreen;
 
             loginscreen.VEvent_OnRegisterLink += View_VEvent_OnRegisterLink;
+            loginscreen.VEvent_OnLogIn += View_VEvent_OnLogIn;
+        }
+
+        private void View_VEvent_OnLogIn(object arg1, EventArgs arg2)
+        {
+            loginscreen.parent.SetUserControl(3);
         }
 
         private void View_VEvent_OnRegisterLink(object arg1, EventArgs arg2)

@@ -39,6 +39,7 @@
             // 
             // menuStrip
             // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logOutToolStripMenuItem,
             this.calendarToolStripMenuItem,
@@ -46,51 +47,55 @@
             this.dietToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip.Size = new System.Drawing.Size(700, 24);
+            this.menuStrip.Size = new System.Drawing.Size(933, 28);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.logOutToolStripMenuItem.Text = "Log out";
             // 
             // calendarToolStripMenuItem
             // 
             this.calendarToolStripMenuItem.Name = "calendarToolStripMenuItem";
-            this.calendarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.calendarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.calendarToolStripMenuItem.Text = "Calendar";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.searchToolStripMenuItem.Text = "Search";
             // 
             // dietToolStripMenuItem
             // 
             this.dietToolStripMenuItem.Name = "dietToolStripMenuItem";
-            this.dietToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.dietToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.dietToolStripMenuItem.Text = "Diet";
             // 
             // groupBox
             // 
-            this.groupBox.Location = new System.Drawing.Point(0, 27);
+            this.groupBox.Location = new System.Drawing.Point(0, 33);
+            this.groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(700, 367);
+            this.groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox.Size = new System.Drawing.Size(933, 452);
             this.groupBox.TabIndex = 1;
             this.groupBox.TabStop = false;
             // 
             // FormDietpolix
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 395);
+            this.ClientSize = new System.Drawing.Size(933, 486);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormDietpolix";
             this.Text = "Dietpolix";
             this.menuStrip.ResumeLayout(false);

@@ -66,5 +66,13 @@ namespace Dietpolix
                 VEvent_OnRegisterLink(sender, e);
             }
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnLogIn != null)
+            {
+                VEvent_OnLogIn(sender, e);
+            }
+        }
     }
 }
