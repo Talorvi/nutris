@@ -74,5 +74,14 @@ namespace Dietpolix
                 VEvent_OnLogIn(sender, e);
             }
         }
+
+        private void LoginScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyValue == 13)
+                if (this.VEvent_OnLogIn != null)
+                {
+                    VEvent_OnLogIn(sender, e);
+                }
+        }
     }
 }

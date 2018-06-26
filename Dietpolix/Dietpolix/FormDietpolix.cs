@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Dietpolix
 {
-    public partial class FormDietpolix : Form
+    public partial class FormDietpolix : Form, Views.IFormDietpolix
     {
         public FormDietpolix()
         {
@@ -17,6 +17,9 @@ namespace Dietpolix
             OnStart();
             groupBox.Controls.AddRange(ListOfObjects.ToArray());
             SetUserControl(2);
+        }
+        void IFormDietpolix.SetUserControl(int id)
+        {
             
         }
         public void SetUserControl(int id)
@@ -25,8 +28,7 @@ namespace Dietpolix
             {
                 usercontrol.Hide();
             }
-            groupBox.Controls[id].Show();
-            
+            groupBox.Controls[id].Show();            
         }
 
         private List<UserControl> ListOfObjects = new List<UserControl>();
@@ -38,7 +40,7 @@ namespace Dietpolix
             DietScreen dietscreen = new DietScreen();                        // 1
             LoginScreen loginscreen = new LoginScreen(this);                 // 2
             MainScreen mainscreen = new MainScreen(this);                    // 3
-            RegisterScreen registerscreen = new RegisterScreen();            // 4
+            RegisterScreen registerscreen = new RegisterScreen(this);        // 4
             SearchScreen searchscreen = new SearchScreen();                  // 5
             UserProfileScreen userprofilescreen = new UserProfileScreen();   // 6
 
@@ -49,9 +51,19 @@ namespace Dietpolix
             DietScreenPresenter dietscreenpresenter = new DietScreenPresenter();
             LoginScreenPresenter loginscreenpresenter = new LoginScreenPresenter(model, (LoginScreen)ListOfObjects[2]);
             MainScreenPresenter mainscreenpresenter = new MainScreenPresenter(model, (MainScreen)ListOfObjects[3]);                       
-            RegisterScreenPresenter registerscreenpresenter = new RegisterScreenPresenter();            
+            RegisterScreenPresenter registerscreenpresenter = new RegisterScreenPresenter(model, (RegisterScreen)ListOfObjects[4]);            
             SearchScreenPresenter searchscreenpresenter = new SearchScreenPresenter();                  
             UserProfileScreenPresenter userprofilescreenpresenter = new UserProfileScreenPresenter();   
+        }
+
+        public event Action<object, EventArgs> VEvent_OnlogOutToolStripMenuItem;
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnlogOutToolStripMenuItem != null)
+            {
+                VEvent_OnlogOutToolStripMenuItem(sender, e);
+            }
         }
     }
 }

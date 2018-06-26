@@ -34,6 +34,7 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dietToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.myaccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +45,8 @@
             this.logOutToolStripMenuItem,
             this.calendarToolStripMenuItem,
             this.searchToolStripMenuItem,
-            this.dietToolStripMenuItem});
+            this.dietToolStripMenuItem,
+            this.myaccountToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -58,6 +60,7 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // calendarToolStripMenuItem
             // 
@@ -80,12 +83,18 @@
             // groupBox
             // 
             this.groupBox.Location = new System.Drawing.Point(0, 33);
-            this.groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox.Size = new System.Drawing.Size(933, 452);
             this.groupBox.TabIndex = 1;
             this.groupBox.TabStop = false;
+            // 
+            // myaccountToolStripMenuItem
+            // 
+            this.myaccountToolStripMenuItem.Name = "myaccountToolStripMenuItem";
+            this.myaccountToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
+            this.myaccountToolStripMenuItem.Text = "My account";
             // 
             // FormDietpolix
             // 
@@ -95,7 +104,7 @@
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormDietpolix";
             this.Text = "Dietpolix";
             this.menuStrip.ResumeLayout(false);
@@ -113,6 +122,7 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dietToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.ToolStripMenuItem myaccountToolStripMenuItem;
     }
 }
 
