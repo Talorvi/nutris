@@ -20,15 +20,19 @@ namespace Dietpolix
         }
         void IFormDietpolix.SetUserControl(int id)
         {
-            
-        }
-        public void SetUserControl(int id)
-        {
-            foreach(UserControl usercontrol in groupBox.Controls)
+            foreach (UserControl usercontrol in groupBox.Controls)
             {
                 usercontrol.Hide();
             }
-            groupBox.Controls[id].Show();            
+            groupBox.Controls[id].Show();
+        }
+        public void SetUserControl(int id)
+        {
+            foreach (UserControl usercontrol in groupBox.Controls)
+            {
+                usercontrol.Hide();
+            }
+            groupBox.Controls[id].Show();
         }
 
         private List<UserControl> ListOfObjects = new List<UserControl>();
@@ -56,7 +60,7 @@ namespace Dietpolix
             UserProfileScreenPresenter userprofilescreenpresenter = new UserProfileScreenPresenter();   
         }
 
-        public event Action<object, EventArgs> VEvent_OnlogOutToolStripMenuItem;
+        public event EventHandler VEvent_OnlogOutToolStripMenuItem;
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {

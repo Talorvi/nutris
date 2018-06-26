@@ -5,7 +5,7 @@ namespace Dietpolix.Views
 {
     interface IFormDietpolix
     {
-        event Action<object, EventArgs> VEvent_OnlogOutToolStripMenuItem;
+        event EventHandler VEvent_OnlogOutToolStripMenuItem;
 
         void SetUserControl(int id);
     }

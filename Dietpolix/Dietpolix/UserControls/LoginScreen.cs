@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
 using Dietpolix.Views;
+using Dietpolix.Classes.Managers;
 
 namespace Dietpolix
 {
     public partial class LoginScreen : UserControl, ILoginScreen
     {
         FormDietpolix parent;
+        APIManagaer apimanager = new APIManagaer();
+
         public LoginScreen(FormDietpolix parent)
         {
             InitializeComponent();
@@ -71,6 +74,7 @@ namespace Dietpolix
         {
             if (this.VEvent_OnLogIn != null)
             {
+                apimanager.RunAll();
                 VEvent_OnLogIn(sender, e);
             }
         }
