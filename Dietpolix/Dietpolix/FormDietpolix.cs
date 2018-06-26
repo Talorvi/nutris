@@ -66,7 +66,7 @@ namespace Dietpolix
             MainScreen mainscreen = new MainScreen(this);                    // 3
             RegisterScreen registerscreen = new RegisterScreen(this);        // 4
             SearchScreen searchscreen = new SearchScreen();                  // 5
-            UserProfileScreen userprofilescreen = new UserProfileScreen();   // 6
+            UserProfileScreen userprofilescreen = new UserProfileScreen(this);   // 6
 
             UserControl[] ArrayOfObjects = { calendarscreen, dietscreen, loginscreen, mainscreen, registerscreen, searchscreen, userprofilescreen };
             ListOfObjects.AddRange(ArrayOfObjects);
@@ -77,16 +77,25 @@ namespace Dietpolix
             MainScreenPresenter mainscreenpresenter = new MainScreenPresenter(model, (MainScreen)ListOfObjects[3]);                       
             RegisterScreenPresenter registerscreenpresenter = new RegisterScreenPresenter(model, (RegisterScreen)ListOfObjects[4]);            
             SearchScreenPresenter searchscreenpresenter = new SearchScreenPresenter();                  
-            UserProfileScreenPresenter userprofilescreenpresenter = new UserProfileScreenPresenter();   
+            UserProfileScreenPresenter userprofilescreenpresenter = new UserProfileScreenPresenter(model, (UserProfileScreen)ListOfObjects[6]);   
         }
 
         public event EventHandler VEvent_OnlogOutToolStripMenuItem;
+        public event EventHandler VEvent_OnmyaccountToolStripMenuItem;
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (this.VEvent_OnlogOutToolStripMenuItem != null)
             {
                 VEvent_OnlogOutToolStripMenuItem(sender, e);
+            }
+        }
+
+        private void myaccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnmyaccountToolStripMenuItem != null)
+            {
+                VEvent_OnmyaccountToolStripMenuItem(sender, e);
             }
         }
     }

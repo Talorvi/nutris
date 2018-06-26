@@ -33,8 +33,8 @@
             this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dietToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox = new System.Windows.Forms.GroupBox();
             this.myaccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox = new System.Windows.Forms.GroupBox();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,13 @@
             this.dietToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.dietToolStripMenuItem.Text = "Diet";
             // 
+            // myaccountToolStripMenuItem
+            // 
+            this.myaccountToolStripMenuItem.Name = "myaccountToolStripMenuItem";
+            this.myaccountToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
+            this.myaccountToolStripMenuItem.Text = "My account";
+            this.myaccountToolStripMenuItem.Click += new System.EventHandler(this.myaccountToolStripMenuItem_Click);
+            // 
             // groupBox
             // 
             this.groupBox.Location = new System.Drawing.Point(0, 33);
@@ -89,12 +96,6 @@
             this.groupBox.Size = new System.Drawing.Size(933, 452);
             this.groupBox.TabIndex = 1;
             this.groupBox.TabStop = false;
-            // 
-            // myaccountToolStripMenuItem
-            // 
-            this.myaccountToolStripMenuItem.Name = "myaccountToolStripMenuItem";
-            this.myaccountToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
-            this.myaccountToolStripMenuItem.Text = "My account";
             // 
             // FormDietpolix
             // 

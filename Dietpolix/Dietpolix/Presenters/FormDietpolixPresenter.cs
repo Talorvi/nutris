@@ -15,6 +15,12 @@ namespace Dietpolix.Presenters
             this.formdietpolix = formdietpolix;
 
             formdietpolix.VEvent_OnlogOutToolStripMenuItem += View_VEvent_OnlogOutToolStripMenuItem;
+            formdietpolix.VEvent_OnmyaccountToolStripMenuItem += View_VEvent_OnmyaccountToolStripMenuItem;
+        }
+
+        private void View_VEvent_OnmyaccountToolStripMenuItem(object sender, EventArgs e)
+        {
+            formdietpolix.SetUserControl(6);
         }
 
         private void View_VEvent_OnlogOutToolStripMenuItem(object arg1, EventArgs arg2)
