@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Dietpolix.Views
@@ -9,6 +10,8 @@ namespace Dietpolix.Views
         event Action<object, EventArgs> VEvent_OnGotoLogin;
 
         void ShowInfo();
+        List<TextBox> ListOfTextboxes();
+        ErrorProvider GiveErrorProvider();
 
         string Login { get; set; }
         string Name { get; set; }

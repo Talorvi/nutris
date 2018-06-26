@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelPassword1 = new System.Windows.Forms.Label();
@@ -40,6 +41,8 @@
             this.labelInfo = new System.Windows.Forms.Label();
             this.linkLabelGotoLogin = new System.Windows.Forms.LinkLabel();
             this.buttonCancelRegister = new System.Windows.Forms.Button();
+            this.errorProviderEmptyTextBox = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmptyTextBox)).BeginInit();
             this.SuspendLayout();
             // 
             // labelLogin
@@ -165,6 +168,10 @@
             this.buttonCancelRegister.UseVisualStyleBackColor = true;
             this.buttonCancelRegister.Click += new System.EventHandler(this.buttonCancelRegister_Click);
             // 
+            // errorProviderEmptyTextBox
+            // 
+            this.errorProviderEmptyTextBox.ContainerControl = this;
+            // 
             // RegisterScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -185,6 +192,7 @@
             this.Name = "RegisterScreen";
             this.Size = new System.Drawing.Size(607, 344);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.RegisterScreen_PreviewKeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmptyTextBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +212,6 @@
         private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.LinkLabel linkLabelGotoLogin;
         private System.Windows.Forms.Button buttonCancelRegister;
+        private System.Windows.Forms.ErrorProvider errorProviderEmptyTextBox;
     }
 }

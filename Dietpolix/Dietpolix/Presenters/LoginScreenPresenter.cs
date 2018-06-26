@@ -20,7 +20,8 @@ namespace Dietpolix.Presenters
 
         private void View_VEvent_OnLogIn(object arg1, EventArgs arg2)
         {
-            loginscreen.parent.SetUserControl(3);
+            if (loginscreen.parent.IsTextboxFilled(loginscreen.GiveErrorProvider(), loginscreen.ListOfTextboxes()))
+                loginscreen.parent.SetUserControl(3);
         }
 
         private void View_VEvent_OnRegisterLink(object arg1, EventArgs arg2)

@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Dietpolix.Views;
 using Dietpolix.Classes.Managers;
+using System.Collections.Generic;
 
 namespace Dietpolix
 {
@@ -61,6 +62,18 @@ namespace Dietpolix
 
         public event Action<object, EventArgs> VEvent_OnLogIn;
         public event EventHandler VEvent_OnRegisterLink;
+
+        List<TextBox> ListOfT = new List<TextBox>();
+        public List<TextBox> ListOfTextboxes()
+        {
+            TextBox[] ArrayOfTextBoxes = { textBoxLogin, textBoxPassword};
+            ListOfT.AddRange(ArrayOfTextBoxes);
+            return (ListOfT);
+        }
+        public ErrorProvider GiveErrorProvider()
+        {
+            return errorProviderEmptyTextBox;
+        }
 
         private void linkLabelRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

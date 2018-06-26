@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Dietpolix.Views;
+using System.Collections.Generic;
 
 namespace Dietpolix.UserControls
 {
@@ -71,7 +72,6 @@ namespace Dietpolix.UserControls
 
         public event Action<object, EventArgs> VEvent_OnRegister;
         public event Action<object, EventArgs> VEvent_OnGotoLogin;
-        
 
         public void ShowInfo()
         {
@@ -85,6 +85,17 @@ namespace Dietpolix.UserControls
                     ((TextBox)t).Text = String.Empty;
                 }
             }
+        }
+        List<TextBox> ListOfT = new List<TextBox>();
+        public List<TextBox> ListOfTextboxes()
+        {
+            TextBox[] ArrayOfTextBoxes = { textBoxLogin, textBoxName, textBoxPassword1, textBoxPassword2};
+            ListOfT.AddRange(ArrayOfTextBoxes);
+            return (ListOfT);
+        }
+        public ErrorProvider GiveErrorProvider()
+        {
+            return errorProviderEmptyTextBox;
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)

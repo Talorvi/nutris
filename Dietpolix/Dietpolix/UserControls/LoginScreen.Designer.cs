@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.linkLabelRegister = new System.Windows.Forms.LinkLabel();
+            this.errorProviderEmptyTextBox = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmptyTextBox)).BeginInit();
             this.SuspendLayout();
             // 
             // labelLogin
@@ -96,6 +99,10 @@
             this.linkLabelRegister.Text = "Register here";
             this.linkLabelRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRegister_LinkClicked);
             // 
+            // errorProviderEmptyTextBox
+            // 
+            this.errorProviderEmptyTextBox.ContainerControl = this;
+            // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -108,8 +115,9 @@
             this.Controls.Add(this.labelLogin);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginScreen";
-            this.Size = new System.Drawing.Size(249, 139);
+            this.Size = new System.Drawing.Size(289, 142);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.LoginScreen_PreviewKeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmptyTextBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +131,6 @@
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.LinkLabel linkLabelRegister;
+        private System.Windows.Forms.ErrorProvider errorProviderEmptyTextBox;
     }
 }

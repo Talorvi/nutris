@@ -26,6 +26,26 @@ namespace Dietpolix
             }
             groupBox.Controls[id].Show();
         }
+
+        public bool IsTextboxFilled(ErrorProvider errorprovider, List<TextBox> listoftextbox)
+        {
+            foreach (TextBox textbox in listoftextbox)
+            {
+                if (textbox.Text == "")
+                    errorprovider.SetError(textbox, "");
+            }
+            foreach (TextBox textbox in listoftextbox)
+            {
+                if (textbox.Text == "")
+                {
+                    errorprovider.SetError(textbox, "Empty textbox");
+                    return false;
+                }
+                errorprovider.SetError(textbox, "");
+            }
+                return true;
+        }
+
         public void SetUserControl(int id)
         {
             foreach (UserControl usercontrol in groupBox.Controls)

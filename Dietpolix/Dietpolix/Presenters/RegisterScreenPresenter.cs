@@ -21,7 +21,8 @@ namespace Dietpolix.Presenters
 
         private void View_VEvent_OnRegister(object arg1, EventArgs arg2)
         {
-            registerscreen.ShowInfo();
+            if(registerscreen.parent.IsTextboxFilled(registerscreen.GiveErrorProvider(), registerscreen.ListOfTextboxes()))
+                registerscreen.ShowInfo();
         }
 
         private void View_VEvent_OnGotoLogin(object arg1, EventArgs arg2)
