@@ -41,6 +41,8 @@
             this.labelUserLifestyle = new System.Windows.Forms.Label();
             this.buttonEditProfile = new System.Windows.Forms.Button();
             this.groupBoxEditProfile = new System.Windows.Forms.GroupBox();
+            this.buttonSubmitEdit = new System.Windows.Forms.Button();
+            this.buttonCancelEdit = new System.Windows.Forms.Button();
             this.numericUpDownAgeChange = new System.Windows.Forms.NumericUpDown();
             this.comboBoxAimChange = new System.Windows.Forms.ComboBox();
             this.comboBoxLifestyleChange = new System.Windows.Forms.ComboBox();
@@ -59,12 +61,14 @@
             this.labelaim = new System.Windows.Forms.Label();
             this.labelUserAim = new System.Windows.Forms.Label();
             this.buttonChangePassword = new System.Windows.Forms.Button();
-            this.buttonCancelEdit = new System.Windows.Forms.Button();
-            this.buttonSubmitEdit = new System.Windows.Forms.Button();
+            this.labelheight = new System.Windows.Forms.Label();
+            this.labelUserHeight = new System.Windows.Forms.Label();
+            this.numericUpDownHeightChange = new System.Windows.Forms.NumericUpDown();
             this.groupBoxEditProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAgeChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeightChange)).BeginInit();
             this.groupBoxChangePassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeightChange)).BeginInit();
             this.SuspendLayout();
             // 
             // labelUsername
@@ -156,7 +160,7 @@
             // labellifestyle
             // 
             this.labellifestyle.AutoSize = true;
-            this.labellifestyle.Location = new System.Drawing.Point(20, 269);
+            this.labellifestyle.Location = new System.Drawing.Point(20, 313);
             this.labellifestyle.Name = "labellifestyle";
             this.labellifestyle.Size = new System.Drawing.Size(64, 17);
             this.labellifestyle.TabIndex = 9;
@@ -166,7 +170,7 @@
             // 
             this.labelUserLifestyle.AutoSize = true;
             this.labelUserLifestyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUserLifestyle.Location = new System.Drawing.Point(133, 269);
+            this.labelUserLifestyle.Location = new System.Drawing.Point(133, 313);
             this.labelUserLifestyle.Name = "labelUserLifestyle";
             this.labelUserLifestyle.Size = new System.Drawing.Size(103, 17);
             this.labelUserLifestyle.TabIndex = 10;
@@ -185,6 +189,7 @@
             // 
             // groupBoxEditProfile
             // 
+            this.groupBoxEditProfile.Controls.Add(this.numericUpDownHeightChange);
             this.groupBoxEditProfile.Controls.Add(this.buttonSubmitEdit);
             this.groupBoxEditProfile.Controls.Add(this.buttonCancelEdit);
             this.groupBoxEditProfile.Controls.Add(this.numericUpDownAgeChange);
@@ -200,6 +205,27 @@
             this.groupBoxEditProfile.TabStop = false;
             this.groupBoxEditProfile.Text = "Edit profile";
             this.groupBoxEditProfile.Visible = false;
+            // 
+            // buttonSubmitEdit
+            // 
+            this.buttonSubmitEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSubmitEdit.Location = new System.Drawing.Point(170, 324);
+            this.buttonSubmitEdit.Name = "buttonSubmitEdit";
+            this.buttonSubmitEdit.Size = new System.Drawing.Size(100, 27);
+            this.buttonSubmitEdit.TabIndex = 9;
+            this.buttonSubmitEdit.Text = "Submit";
+            this.buttonSubmitEdit.UseVisualStyleBackColor = true;
+            // 
+            // buttonCancelEdit
+            // 
+            this.buttonCancelEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCancelEdit.Location = new System.Drawing.Point(6, 323);
+            this.buttonCancelEdit.Name = "buttonCancelEdit";
+            this.buttonCancelEdit.Size = new System.Drawing.Size(100, 27);
+            this.buttonCancelEdit.TabIndex = 8;
+            this.buttonCancelEdit.Text = "Cancel";
+            this.buttonCancelEdit.UseVisualStyleBackColor = true;
+            this.buttonCancelEdit.Click += new System.EventHandler(this.buttonCancelEdit_Click);
             // 
             // numericUpDownAgeChange
             // 
@@ -224,7 +250,7 @@
             this.comboBoxAimChange.Items.AddRange(new object[] {
             "Fat reduction",
             "Working on lean muscle mass"});
-            this.comboBoxAimChange.Location = new System.Drawing.Point(6, 233);
+            this.comboBoxAimChange.Location = new System.Drawing.Point(6, 277);
             this.comboBoxAimChange.Name = "comboBoxAimChange";
             this.comboBoxAimChange.Size = new System.Drawing.Size(264, 24);
             this.comboBoxAimChange.TabIndex = 6;
@@ -238,7 +264,7 @@
             "Balanced (3-4 workouts per week)",
             "Fit (3-4 workouts per week + physical work)",
             "Sportsman (workouts almost everyday)"});
-            this.comboBoxLifestyleChange.Location = new System.Drawing.Point(6, 190);
+            this.comboBoxLifestyleChange.Location = new System.Drawing.Point(6, 234);
             this.comboBoxLifestyleChange.Name = "comboBoxLifestyleChange";
             this.comboBoxLifestyleChange.Size = new System.Drawing.Size(264, 24);
             this.comboBoxLifestyleChange.TabIndex = 5;
@@ -368,7 +394,7 @@
             // labelaim
             // 
             this.labelaim.AutoSize = true;
-            this.labelaim.Location = new System.Drawing.Point(20, 312);
+            this.labelaim.Location = new System.Drawing.Point(20, 356);
             this.labelaim.Name = "labelaim";
             this.labelaim.Size = new System.Drawing.Size(35, 17);
             this.labelaim.TabIndex = 14;
@@ -378,7 +404,7 @@
             // 
             this.labelUserAim.AutoSize = true;
             this.labelUserAim.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUserAim.Location = new System.Drawing.Point(133, 312);
+            this.labelUserAim.Location = new System.Drawing.Point(133, 356);
             this.labelUserAim.Name = "labelUserAim";
             this.labelUserAim.Size = new System.Drawing.Size(72, 17);
             this.labelUserAim.TabIndex = 15;
@@ -395,31 +421,53 @@
             this.buttonChangePassword.UseVisualStyleBackColor = true;
             this.buttonChangePassword.Click += new System.EventHandler(this.buttonChangePassword_Click);
             // 
-            // buttonCancelEdit
+            // labelheight
             // 
-            this.buttonCancelEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonCancelEdit.Location = new System.Drawing.Point(6, 323);
-            this.buttonCancelEdit.Name = "buttonCancelEdit";
-            this.buttonCancelEdit.Size = new System.Drawing.Size(100, 27);
-            this.buttonCancelEdit.TabIndex = 8;
-            this.buttonCancelEdit.Text = "Cancel";
-            this.buttonCancelEdit.UseVisualStyleBackColor = true;
-            this.buttonCancelEdit.Click += new System.EventHandler(this.buttonCancelEdit_Click);
+            this.labelheight.AutoSize = true;
+            this.labelheight.Location = new System.Drawing.Point(21, 269);
+            this.labelheight.Name = "labelheight";
+            this.labelheight.Size = new System.Drawing.Size(53, 17);
+            this.labelheight.TabIndex = 10;
+            this.labelheight.Text = "Height:";
             // 
-            // buttonSubmitEdit
+            // labelUserHeight
             // 
-            this.buttonSubmitEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSubmitEdit.Location = new System.Drawing.Point(170, 324);
-            this.buttonSubmitEdit.Name = "buttonSubmitEdit";
-            this.buttonSubmitEdit.Size = new System.Drawing.Size(100, 27);
-            this.buttonSubmitEdit.TabIndex = 9;
-            this.buttonSubmitEdit.Text = "Submit";
-            this.buttonSubmitEdit.UseVisualStyleBackColor = true;
+            this.labelUserHeight.AutoSize = true;
+            this.labelUserHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUserHeight.Location = new System.Drawing.Point(133, 269);
+            this.labelUserHeight.Name = "labelUserHeight";
+            this.labelUserHeight.Size = new System.Drawing.Size(92, 17);
+            this.labelUserHeight.TabIndex = 17;
+            this.labelUserHeight.Text = "User height";
+            // 
+            // numericUpDownHeightChange
+            // 
+            this.numericUpDownHeightChange.Location = new System.Drawing.Point(6, 191);
+            this.numericUpDownHeightChange.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numericUpDownHeightChange.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.numericUpDownHeightChange.Name = "numericUpDownHeightChange";
+            this.numericUpDownHeightChange.Size = new System.Drawing.Size(75, 22);
+            this.numericUpDownHeightChange.TabIndex = 10;
+            this.numericUpDownHeightChange.Value = new decimal(new int[] {
+            170,
+            0,
+            0,
+            0});
             // 
             // UserProfileScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelUserHeight);
+            this.Controls.Add(this.labelheight);
             this.Controls.Add(this.buttonChangePassword);
             this.Controls.Add(this.labelUserAim);
             this.Controls.Add(this.labelaim);
@@ -445,6 +493,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeightChange)).EndInit();
             this.groupBoxChangePassword.ResumeLayout(false);
             this.groupBoxChangePassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeightChange)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,5 +534,8 @@
         private System.Windows.Forms.TextBox textBoxNewPassword;
         private System.Windows.Forms.Button buttonSubmitEdit;
         private System.Windows.Forms.Button buttonCancelEdit;
+        private System.Windows.Forms.NumericUpDown numericUpDownHeightChange;
+        private System.Windows.Forms.Label labelheight;
+        private System.Windows.Forms.Label labelUserHeight;
     }
 }
