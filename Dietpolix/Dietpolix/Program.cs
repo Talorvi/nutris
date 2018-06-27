@@ -1,4 +1,5 @@
-﻿using Dietpolix.Models;
+﻿using Dietpolix.Classes.Managers;
+using Dietpolix.Models;
 using Dietpolix.Presenters;
 using System;
 using System.Windows.Forms;

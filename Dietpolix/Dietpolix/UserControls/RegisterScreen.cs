@@ -44,6 +44,18 @@ namespace Dietpolix.UserControls
             }
         }
 
+        new public string Name
+        {
+            get
+            {
+                return textBoxName.Text;
+            }
+            set
+            {
+                textBoxName.Text = value;
+            }
+        }
+
         public string Password1
         {
             get

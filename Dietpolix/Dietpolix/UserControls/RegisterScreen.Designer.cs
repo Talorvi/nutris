@@ -189,7 +189,6 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelLogin);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "RegisterScreen";
             this.Size = new System.Drawing.Size(607, 344);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.RegisterScreen_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmptyTextBox)).EndInit();

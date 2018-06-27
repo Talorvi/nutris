@@ -21,8 +21,20 @@ namespace Dietpolix.Presenters
 
         private void View_VEvent_OnRegister(object arg1, EventArgs arg2)
         {
-            if(registerscreen.parent.IsTextboxFilled(registerscreen.GiveErrorProvider(), registerscreen.ListOfTextboxes()))
-                registerscreen.ShowInfo();
+            if (registerscreen.parent.IsTextboxFilled(registerscreen.GiveErrorProvider(), registerscreen.ListOfTextboxes()))
+            {
+                if (registerscreen.Password1 == registerscreen.Password2)
+                {
+                    bool LoginExists = model.databasemanager.CheckIfLoginExists(registerscreen.Login);
+                    if (LoginExists == false)
+                    {
+                        bool CanAddUser = model.databasemanager.TryToAddUser(registerscreen.Login, registerscreen.Password1, registerscreen.Name, 0);
+                        if(CanAddUser == true)
+                            registerscreen.ShowInfo();
+                    }
+                }
+            }
+                
         }
 
         private void View_VEvent_OnGotoLogin(object arg1, EventArgs arg2)

@@ -27,8 +27,6 @@ namespace Dietpolix.Presenters
         private void View_VEvent_OnRegisterLink(object arg1, EventArgs arg2)
         {
             loginscreen.parent.SetUserControl(4);
-            Console.WriteLine("lol");
-            //loginscreen.FormDietpolix.Hide();
         }
     }
 }
