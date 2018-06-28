@@ -1,12 +1,33 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+using Dietpolix.Views;
+using System.Collections.Generic;
 
 namespace Dietpolix
 {
-    public partial class DietScreen : UserControl
+    public partial class DietScreen : UserControl, IDietScreen
     {
-        public DietScreen()
+        FormDietpolix parent;
+        public DietScreen(FormDietpolix parent)
         {
             InitializeComponent();
+            this.parent = parent;
+        }
+
+        public Control FormDietpolix
+        {
+            get
+            {
+                return this.Parent;
+            }
+        }
+
+        FormDietpolix IDietScreen.parent
+        {
+            get
+            {
+                return parent;
+            }
         }
     }
 }

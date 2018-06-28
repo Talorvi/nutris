@@ -62,6 +62,7 @@ namespace Dietpolix
 
         public event Action<object, EventArgs> VEvent_OnLogIn;
         public event EventHandler VEvent_OnRegisterLink;
+        public event Action<object, EventArgs> VEvent_OnLoad;
 
         List<TextBox> ListOfT = new List<TextBox>();
         public List<TextBox> ListOfTextboxes()
@@ -73,6 +74,17 @@ namespace Dietpolix
         public ErrorProvider GiveErrorProvider()
         {
             return errorProviderEmptyTextBox;
+        }
+
+        public void ClearAllTextboxes()
+        {
+            foreach (var t in this.Controls)
+            {
+                if (t is TextBox)
+                {
+                    ((TextBox)t).Text = String.Empty;
+                }
+            }
         }
 
         private void linkLabelRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -99,6 +111,14 @@ namespace Dietpolix
                 {
                     VEvent_OnLogIn(sender, e);
                 }
+        }
+
+        private void LoginScreen_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnLoad != null)
+            {
+                VEvent_OnLoad(sender, e);
+            }
         }
     }
 }

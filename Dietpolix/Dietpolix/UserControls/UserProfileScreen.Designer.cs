@@ -41,6 +41,7 @@
             this.labelUserLifestyle = new System.Windows.Forms.Label();
             this.buttonEditProfile = new System.Windows.Forms.Button();
             this.groupBoxEditProfile = new System.Windows.Forms.GroupBox();
+            this.numericUpDownHeightChange = new System.Windows.Forms.NumericUpDown();
             this.buttonSubmitEdit = new System.Windows.Forms.Button();
             this.buttonCancelEdit = new System.Windows.Forms.Button();
             this.numericUpDownAgeChange = new System.Windows.Forms.NumericUpDown();
@@ -63,12 +64,11 @@
             this.buttonChangePassword = new System.Windows.Forms.Button();
             this.labelheight = new System.Windows.Forms.Label();
             this.labelUserHeight = new System.Windows.Forms.Label();
-            this.numericUpDownHeightChange = new System.Windows.Forms.NumericUpDown();
             this.groupBoxEditProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeightChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAgeChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeightChange)).BeginInit();
             this.groupBoxChangePassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeightChange)).BeginInit();
             this.SuspendLayout();
             // 
             // labelUsername
@@ -84,7 +84,7 @@
             // labellogin
             // 
             this.labellogin.AutoSize = true;
-            this.labellogin.Location = new System.Drawing.Point(20, 98);
+            this.labellogin.Location = new System.Drawing.Point(20, 86);
             this.labellogin.Name = "labellogin";
             this.labellogin.Size = new System.Drawing.Size(47, 17);
             this.labellogin.TabIndex = 1;
@@ -94,16 +94,16 @@
             // 
             this.labelUserLogin.AutoSize = true;
             this.labelUserLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUserLogin.Location = new System.Drawing.Point(133, 98);
+            this.labelUserLogin.Location = new System.Drawing.Point(133, 86);
             this.labelUserLogin.Name = "labelUserLogin";
-            this.labelUserLogin.Size = new System.Drawing.Size(82, 17);
+            this.labelUserLogin.Size = new System.Drawing.Size(65, 17);
             this.labelUserLogin.TabIndex = 2;
-            this.labelUserLogin.Text = "User login";
+            this.labelUserLogin.Text = "No data";
             // 
             // labelsex
             // 
             this.labelsex.AutoSize = true;
-            this.labelsex.Location = new System.Drawing.Point(20, 138);
+            this.labelsex.Location = new System.Drawing.Point(20, 126);
             this.labelsex.Name = "labelsex";
             this.labelsex.Size = new System.Drawing.Size(35, 17);
             this.labelsex.TabIndex = 3;
@@ -113,16 +113,16 @@
             // 
             this.labelUserSex.AutoSize = true;
             this.labelUserSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUserSex.Location = new System.Drawing.Point(133, 138);
+            this.labelUserSex.Location = new System.Drawing.Point(133, 126);
             this.labelUserSex.Name = "labelUserSex";
-            this.labelUserSex.Size = new System.Drawing.Size(71, 17);
+            this.labelUserSex.Size = new System.Drawing.Size(65, 17);
             this.labelUserSex.TabIndex = 4;
-            this.labelUserSex.Text = "User sex";
+            this.labelUserSex.Text = "No data";
             // 
             // labelage
             // 
             this.labelage.AutoSize = true;
-            this.labelage.Location = new System.Drawing.Point(20, 181);
+            this.labelage.Location = new System.Drawing.Point(20, 169);
             this.labelage.Name = "labelage";
             this.labelage.Size = new System.Drawing.Size(37, 17);
             this.labelage.TabIndex = 5;
@@ -132,16 +132,16 @@
             // 
             this.labelUserAge.AutoSize = true;
             this.labelUserAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUserAge.Location = new System.Drawing.Point(133, 181);
+            this.labelUserAge.Location = new System.Drawing.Point(133, 169);
             this.labelUserAge.Name = "labelUserAge";
-            this.labelUserAge.Size = new System.Drawing.Size(74, 17);
+            this.labelUserAge.Size = new System.Drawing.Size(65, 17);
             this.labelUserAge.TabIndex = 6;
-            this.labelUserAge.Text = "User age";
+            this.labelUserAge.Text = "No data";
             // 
             // labelweight
             // 
             this.labelweight.AutoSize = true;
-            this.labelweight.Location = new System.Drawing.Point(20, 225);
+            this.labelweight.Location = new System.Drawing.Point(20, 213);
             this.labelweight.Name = "labelweight";
             this.labelweight.Size = new System.Drawing.Size(56, 17);
             this.labelweight.TabIndex = 7;
@@ -151,16 +151,16 @@
             // 
             this.labelUserWeight.AutoSize = true;
             this.labelUserWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUserWeight.Location = new System.Drawing.Point(133, 225);
+            this.labelUserWeight.Location = new System.Drawing.Point(133, 213);
             this.labelUserWeight.Name = "labelUserWeight";
-            this.labelUserWeight.Size = new System.Drawing.Size(93, 17);
+            this.labelUserWeight.Size = new System.Drawing.Size(65, 17);
             this.labelUserWeight.TabIndex = 8;
-            this.labelUserWeight.Text = "User weight";
+            this.labelUserWeight.Text = "No data";
             // 
             // labellifestyle
             // 
             this.labellifestyle.AutoSize = true;
-            this.labellifestyle.Location = new System.Drawing.Point(20, 313);
+            this.labellifestyle.Location = new System.Drawing.Point(20, 301);
             this.labellifestyle.Name = "labellifestyle";
             this.labellifestyle.Size = new System.Drawing.Size(64, 17);
             this.labellifestyle.TabIndex = 9;
@@ -170,16 +170,16 @@
             // 
             this.labelUserLifestyle.AutoSize = true;
             this.labelUserLifestyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUserLifestyle.Location = new System.Drawing.Point(133, 313);
+            this.labelUserLifestyle.Location = new System.Drawing.Point(133, 301);
             this.labelUserLifestyle.Name = "labelUserLifestyle";
-            this.labelUserLifestyle.Size = new System.Drawing.Size(103, 17);
+            this.labelUserLifestyle.Size = new System.Drawing.Size(65, 17);
             this.labelUserLifestyle.TabIndex = 10;
-            this.labelUserLifestyle.Text = "User lifestyle";
+            this.labelUserLifestyle.Text = "No data";
             // 
             // buttonEditProfile
             // 
             this.buttonEditProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonEditProfile.Location = new System.Drawing.Point(136, 399);
+            this.buttonEditProfile.Location = new System.Drawing.Point(136, 387);
             this.buttonEditProfile.Name = "buttonEditProfile";
             this.buttonEditProfile.Size = new System.Drawing.Size(100, 27);
             this.buttonEditProfile.TabIndex = 11;
@@ -198,13 +198,35 @@
             this.groupBoxEditProfile.Controls.Add(this.numericUpDownWeightChange);
             this.groupBoxEditProfile.Controls.Add(this.comboBoxSexChange);
             this.groupBoxEditProfile.Controls.Add(this.textBoxLoginChange);
-            this.groupBoxEditProfile.Location = new System.Drawing.Point(242, 76);
+            this.groupBoxEditProfile.Location = new System.Drawing.Point(322, 64);
             this.groupBoxEditProfile.Name = "groupBoxEditProfile";
             this.groupBoxEditProfile.Size = new System.Drawing.Size(276, 362);
             this.groupBoxEditProfile.TabIndex = 12;
             this.groupBoxEditProfile.TabStop = false;
             this.groupBoxEditProfile.Text = "Edit profile";
             this.groupBoxEditProfile.Visible = false;
+            // 
+            // numericUpDownHeightChange
+            // 
+            this.numericUpDownHeightChange.Location = new System.Drawing.Point(6, 191);
+            this.numericUpDownHeightChange.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numericUpDownHeightChange.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.numericUpDownHeightChange.Name = "numericUpDownHeightChange";
+            this.numericUpDownHeightChange.Size = new System.Drawing.Size(75, 22);
+            this.numericUpDownHeightChange.TabIndex = 10;
+            this.numericUpDownHeightChange.Value = new decimal(new int[] {
+            170,
+            0,
+            0,
+            0});
             // 
             // buttonSubmitEdit
             // 
@@ -314,7 +336,7 @@
             this.groupBoxChangePassword.Controls.Add(this.labelNewPassword);
             this.groupBoxChangePassword.Controls.Add(this.textBoxOldPassword);
             this.groupBoxChangePassword.Controls.Add(this.labeloldpassword);
-            this.groupBoxChangePassword.Location = new System.Drawing.Point(560, 124);
+            this.groupBoxChangePassword.Location = new System.Drawing.Point(711, 112);
             this.groupBoxChangePassword.Name = "groupBoxChangePassword";
             this.groupBoxChangePassword.Size = new System.Drawing.Size(247, 314);
             this.groupBoxChangePassword.TabIndex = 13;
@@ -394,7 +416,7 @@
             // labelaim
             // 
             this.labelaim.AutoSize = true;
-            this.labelaim.Location = new System.Drawing.Point(20, 356);
+            this.labelaim.Location = new System.Drawing.Point(20, 344);
             this.labelaim.Name = "labelaim";
             this.labelaim.Size = new System.Drawing.Size(35, 17);
             this.labelaim.TabIndex = 14;
@@ -404,16 +426,16 @@
             // 
             this.labelUserAim.AutoSize = true;
             this.labelUserAim.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUserAim.Location = new System.Drawing.Point(133, 356);
+            this.labelUserAim.Location = new System.Drawing.Point(133, 344);
             this.labelUserAim.Name = "labelUserAim";
-            this.labelUserAim.Size = new System.Drawing.Size(72, 17);
+            this.labelUserAim.Size = new System.Drawing.Size(65, 17);
             this.labelUserAim.TabIndex = 15;
-            this.labelUserAim.Text = "User aim";
+            this.labelUserAim.Text = "No data";
             // 
             // buttonChangePassword
             // 
             this.buttonChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonChangePassword.Location = new System.Drawing.Point(701, 18);
+            this.buttonChangePassword.Location = new System.Drawing.Point(871, 19);
             this.buttonChangePassword.Name = "buttonChangePassword";
             this.buttonChangePassword.Size = new System.Drawing.Size(169, 26);
             this.buttonChangePassword.TabIndex = 16;
@@ -424,7 +446,7 @@
             // labelheight
             // 
             this.labelheight.AutoSize = true;
-            this.labelheight.Location = new System.Drawing.Point(21, 269);
+            this.labelheight.Location = new System.Drawing.Point(21, 257);
             this.labelheight.Name = "labelheight";
             this.labelheight.Size = new System.Drawing.Size(53, 17);
             this.labelheight.TabIndex = 10;
@@ -434,33 +456,11 @@
             // 
             this.labelUserHeight.AutoSize = true;
             this.labelUserHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUserHeight.Location = new System.Drawing.Point(133, 269);
+            this.labelUserHeight.Location = new System.Drawing.Point(133, 257);
             this.labelUserHeight.Name = "labelUserHeight";
-            this.labelUserHeight.Size = new System.Drawing.Size(92, 17);
+            this.labelUserHeight.Size = new System.Drawing.Size(65, 17);
             this.labelUserHeight.TabIndex = 17;
-            this.labelUserHeight.Text = "User height";
-            // 
-            // numericUpDownHeightChange
-            // 
-            this.numericUpDownHeightChange.Location = new System.Drawing.Point(6, 191);
-            this.numericUpDownHeightChange.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.numericUpDownHeightChange.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.numericUpDownHeightChange.Name = "numericUpDownHeightChange";
-            this.numericUpDownHeightChange.Size = new System.Drawing.Size(75, 22);
-            this.numericUpDownHeightChange.TabIndex = 10;
-            this.numericUpDownHeightChange.Value = new decimal(new int[] {
-            170,
-            0,
-            0,
-            0});
+            this.labelUserHeight.Text = "No data";
             // 
             // UserProfileScreen
             // 
@@ -486,14 +486,14 @@
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.groupBoxEditProfile);
             this.Name = "UserProfileScreen";
-            this.Size = new System.Drawing.Size(929, 487);
+            this.Size = new System.Drawing.Size(1065, 487);
             this.groupBoxEditProfile.ResumeLayout(false);
             this.groupBoxEditProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeightChange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAgeChange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeightChange)).EndInit();
             this.groupBoxChangePassword.ResumeLayout(false);
             this.groupBoxChangePassword.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeightChange)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

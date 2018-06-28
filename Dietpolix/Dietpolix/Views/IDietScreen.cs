@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Dietpolix.Views
 {
-    public interface ISearchScreen
+    public interface IDietScreen
     {
-        event Action<object, EventArgs> VEvent_OnbuttonAddToDiet;
 
         Control FormDietpolix { get; }
         FormDietpolix parent { get; }

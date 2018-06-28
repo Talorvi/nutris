@@ -116,6 +116,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginScreen";
             this.Size = new System.Drawing.Size(289, 142);
+            this.VisibleChanged += new System.EventHandler(this.LoginScreen_VisibleChanged);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.LoginScreen_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmptyTextBox)).EndInit();
             this.ResumeLayout(false);

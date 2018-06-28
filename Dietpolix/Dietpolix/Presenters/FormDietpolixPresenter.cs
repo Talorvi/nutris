@@ -16,6 +16,30 @@ namespace Dietpolix.Presenters
 
             formdietpolix.VEvent_OnlogOutToolStripMenuItem += View_VEvent_OnlogOutToolStripMenuItem;
             formdietpolix.VEvent_OnmyaccountToolStripMenuItem += View_VEvent_OnmyaccountToolStripMenuItem;
+            formdietpolix.VEvent_OnhometoolStripMenuItem += View_VEvent_OnhometoolStripMenuItem;
+            formdietpolix.VEvent_OncalendarToolStripMenuItem += View_VEvent_OncalendarToolStripMenuItem;
+            formdietpolix.VEvent_OnsearchToolStripMenuItem += View_VEvent_OnsearchToolStripMenuItem;
+            formdietpolix.VEvent_OndietToolStripMenuItem += View_VEvent_OndietToolStripMenuItem;
+        }
+
+        private void View_VEvent_OndietToolStripMenuItem(object sender, EventArgs e)
+        {
+            formdietpolix.SetUserControl(1);
+        }
+
+        private void View_VEvent_OnsearchToolStripMenuItem(object sender, EventArgs e)
+        {
+            formdietpolix.SetUserControl(5);
+        }
+
+        private void View_VEvent_OncalendarToolStripMenuItem(object sender, EventArgs e)
+        {
+            formdietpolix.SetUserControl(0);
+        }
+
+        private void View_VEvent_OnhometoolStripMenuItem(object sender, EventArgs e)
+        {
+            formdietpolix.SetUserControl(3);
         }
 
         private void View_VEvent_OnmyaccountToolStripMenuItem(object sender, EventArgs e)

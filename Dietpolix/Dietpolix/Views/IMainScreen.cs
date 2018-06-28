@@ -6,6 +6,7 @@ namespace Dietpolix.Views
     public interface IMainScreen
     {
         event Action<object, EventArgs> VEvent_OnSelectedIndexChanged;
+        event Action<object, EventArgs> VEvent_OnLoad;
         //event EventHandler VEvent_OnRegisterLink;
 
         Control FormDietpolix { get; }

@@ -35,6 +35,7 @@
             this.dietToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myaccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.hometoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,15 +44,16 @@
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logOutToolStripMenuItem,
+            this.myaccountToolStripMenuItem,
             this.calendarToolStripMenuItem,
             this.searchToolStripMenuItem,
             this.dietToolStripMenuItem,
-            this.myaccountToolStripMenuItem});
+            this.hometoolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip.Size = new System.Drawing.Size(933, 28);
+            this.menuStrip.Size = new System.Drawing.Size(1091, 28);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -67,18 +69,21 @@
             this.calendarToolStripMenuItem.Name = "calendarToolStripMenuItem";
             this.calendarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.calendarToolStripMenuItem.Text = "Calendar";
+            this.calendarToolStripMenuItem.Click += new System.EventHandler(this.calendarToolStripMenuItem_Click);
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.searchToolStripMenuItem.Text = "Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // dietToolStripMenuItem
             // 
             this.dietToolStripMenuItem.Name = "dietToolStripMenuItem";
             this.dietToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.dietToolStripMenuItem.Text = "Diet";
+            this.dietToolStripMenuItem.Click += new System.EventHandler(this.dietToolStripMenuItem_Click);
             // 
             // myaccountToolStripMenuItem
             // 
@@ -93,15 +98,22 @@
             this.groupBox.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox.Name = "groupBox";
             this.groupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox.Size = new System.Drawing.Size(933, 452);
+            this.groupBox.Size = new System.Drawing.Size(1091, 452);
             this.groupBox.TabIndex = 1;
             this.groupBox.TabStop = false;
+            // 
+            // hometoolStripMenuItem
+            // 
+            this.hometoolStripMenuItem.Name = "hometoolStripMenuItem";
+            this.hometoolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.hometoolStripMenuItem.Text = "Home";
+            this.hometoolStripMenuItem.Click += new System.EventHandler(this.hometoolStripMenuItem_Click);
             // 
             // FormDietpolix
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 486);
+            this.ClientSize = new System.Drawing.Size(1091, 486);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
@@ -124,6 +136,7 @@
         private System.Windows.Forms.ToolStripMenuItem dietToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.ToolStripMenuItem myaccountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hometoolStripMenuItem;
     }
 }
 

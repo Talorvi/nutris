@@ -8,9 +8,11 @@ namespace Dietpolix.Views
     {
         event Action<object, EventArgs> VEvent_OnLogIn;
         event EventHandler VEvent_OnRegisterLink;
+        event Action<object, EventArgs> VEvent_OnLoad;
 
         List<TextBox> ListOfTextboxes();
         ErrorProvider GiveErrorProvider();
+        void ClearAllTextboxes();
 
         string Login { get; set; }
         string Password { get; set; }

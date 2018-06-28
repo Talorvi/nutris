@@ -60,28 +60,32 @@ namespace Dietpolix
 
         private void OnStart()
         {
-            CalendarScreen calendarscreen = new CalendarScreen();            // 0
-            DietScreen dietscreen = new DietScreen();                        // 1
+            CalendarScreen calendarscreen = new CalendarScreen(this);            // 0
+            DietScreen dietscreen = new DietScreen(this);                        // 1
             LoginScreen loginscreen = new LoginScreen(this);                 // 2
             MainScreen mainscreen = new MainScreen(this);                    // 3
             RegisterScreen registerscreen = new RegisterScreen(this);        // 4
-            SearchScreen searchscreen = new SearchScreen();                  // 5
+            SearchScreen searchscreen = new SearchScreen(this);              // 5
             UserProfileScreen userprofilescreen = new UserProfileScreen(this);   // 6
 
             UserControl[] ArrayOfObjects = { calendarscreen, dietscreen, loginscreen, mainscreen, registerscreen, searchscreen, userprofilescreen };
             ListOfObjects.AddRange(ArrayOfObjects);
 
-            CalendarScreenPresenter calendarscreenpresenter = new CalendarScreenPresenter();       
-            DietScreenPresenter dietscreenpresenter = new DietScreenPresenter();
+            CalendarScreenPresenter calendarscreenpresenter = new CalendarScreenPresenter(model, (CalendarScreen)ListOfObjects[0]);       
+            DietScreenPresenter dietscreenpresenter = new DietScreenPresenter(model, (DietScreen)ListOfObjects[1]);
             LoginScreenPresenter loginscreenpresenter = new LoginScreenPresenter(model, (LoginScreen)ListOfObjects[2]);
             MainScreenPresenter mainscreenpresenter = new MainScreenPresenter(model, (MainScreen)ListOfObjects[3]);                       
             RegisterScreenPresenter registerscreenpresenter = new RegisterScreenPresenter(model, (RegisterScreen)ListOfObjects[4]);            
-            SearchScreenPresenter searchscreenpresenter = new SearchScreenPresenter();                  
+            SearchScreenPresenter searchscreenpresenter = new SearchScreenPresenter(model, (SearchScreen)ListOfObjects[5]);                  
             UserProfileScreenPresenter userprofilescreenpresenter = new UserProfileScreenPresenter(model, (UserProfileScreen)ListOfObjects[6]);   
         }
 
         public event EventHandler VEvent_OnlogOutToolStripMenuItem;
         public event EventHandler VEvent_OnmyaccountToolStripMenuItem;
+        public event EventHandler VEvent_OnhometoolStripMenuItem;
+        public event EventHandler VEvent_OncalendarToolStripMenuItem;
+        public event EventHandler VEvent_OnsearchToolStripMenuItem;
+        public event EventHandler VEvent_OndietToolStripMenuItem;
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -96,6 +100,38 @@ namespace Dietpolix
             if (this.VEvent_OnmyaccountToolStripMenuItem != null)
             {
                 VEvent_OnmyaccountToolStripMenuItem(sender, e);
+            }
+        }
+
+        private void hometoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnhometoolStripMenuItem != null)
+            {
+                VEvent_OnhometoolStripMenuItem(sender, e);
+            }
+        }
+
+        private void calendarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OncalendarToolStripMenuItem != null)
+            {
+                VEvent_OncalendarToolStripMenuItem(sender, e);
+            }
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnsearchToolStripMenuItem != null)
+            {
+                VEvent_OnsearchToolStripMenuItem(sender, e);
+            }
+        }
+
+        private void dietToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OndietToolStripMenuItem != null)
+            {
+                VEvent_OndietToolStripMenuItem(sender, e);
             }
         }
     }

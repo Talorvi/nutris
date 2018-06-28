@@ -61,6 +61,7 @@ namespace Dietpolix
         }
 
         public event Action<object, EventArgs> VEvent_OnSelectedIndexChanged;
+        public event Action<object, EventArgs> VEvent_OnLoad;
 
         private void listBoxTodayDietProducts_SelectedIndexChanged(object sender, System.EventArgs e)
         {
@@ -70,6 +71,12 @@ namespace Dietpolix
             }
         }
 
-
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnLoad != null)
+            {
+                VEvent_OnLoad(sender, e);
+            }
+        }
     }
 }

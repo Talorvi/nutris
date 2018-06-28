@@ -143,7 +143,7 @@
       <DependentUpon>UserProfileScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ICalendarScreen.cs" />
-    <Compile Include="Views\IDietScreencs.cs" />
+    <Compile Include="Views\IDietScreen.cs" />
     <Compile Include="Views\IFormDietpolix.cs" />
     <Compile Include="Views\ILoginScreen.cs" />
     <Compile Include="Views\IMainScreen.cs" />
@@ -155,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CalendarScreen.resx">
       <DependentUpon>CalendarScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DietScreen.resx">
+      <DependentUpon>DietScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
@@ -173,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\RegisterScreen.resx">
       <DependentUpon>RegisterScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SearchScreen.resx">
+      <DependentUpon>SearchScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserProfileScreen.resx">
       <DependentUpon>UserProfileScreen.cs</DependentUpon>
