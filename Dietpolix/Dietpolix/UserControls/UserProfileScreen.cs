@@ -152,6 +152,7 @@ namespace Dietpolix
         public event Action<object, EventArgs> VEvent_OnbuttonCancelEdit;
         public event Action<object, EventArgs> VEvent_OnbuttonChangePassword;
         public event Action<object, EventArgs> VEvent_OnbuttonCancelPasswordChange;
+        public event Action<object, EventArgs> VEvent_OnLoad;
 
         public void ShowEditProfile()
         {
@@ -202,6 +203,14 @@ namespace Dietpolix
             if (this.VEvent_OnbuttonCancelPasswordChange != null)
             {
                 VEvent_OnbuttonCancelPasswordChange(sender, e);
+            }
+        }
+
+        private void UserProfileScreen_Load(object sender, EventArgs e)
+        {
+            if (VEvent_OnLoad != null)
+            {
+                VEvent_OnLoad(sender, e);
             }
         }
     }

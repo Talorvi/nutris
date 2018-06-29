@@ -39,5 +39,9 @@ namespace Dietpolix.Presenters
         {
             userprofilescreen.ShowEditProfile();
         }
+        private void View_VEvent_OnLoad(object arg1, EventArgs arg2)
+        {
+            
+        }
     }
 }
