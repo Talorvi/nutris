@@ -50,6 +50,7 @@ namespace Dietpolix.Presenters
         private void View_VEvent_OnlogOutToolStripMenuItem(object arg1, EventArgs arg2)
         {
             formdietpolix.SetUserControl(2);
+            formdietpolix.HideMenu();
         }
     }
 }

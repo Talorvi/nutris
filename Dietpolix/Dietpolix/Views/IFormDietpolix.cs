@@ -13,5 +13,7 @@ namespace Dietpolix.Views
         event EventHandler VEvent_OndietToolStripMenuItem;
 
         void SetUserControl(int id);
+        void ShowMenu();
+        void HideMenu();
     }
 }

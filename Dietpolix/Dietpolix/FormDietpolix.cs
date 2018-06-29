@@ -55,6 +55,21 @@ namespace Dietpolix
             groupBox.Controls[id].Show();
         }
 
+        public void HideMenu()
+        {
+            if (menuStrip.Visible == true)
+            {
+                menuStrip.Visible = false;
+            }
+        }
+        public void ShowMenu()
+        {
+            if(menuStrip.Visible == false)
+            {
+                menuStrip.Visible = true;
+            }
+        }
+
         private List<UserControl> ListOfObjects = new List<UserControl>();
         Model model = new Model();
 
@@ -62,10 +77,10 @@ namespace Dietpolix
         {
             CalendarScreen calendarscreen = new CalendarScreen(this);            // 0
             DietScreen dietscreen = new DietScreen(this);                        // 1
-            LoginScreen loginscreen = new LoginScreen(this);                 // 2
-            MainScreen mainscreen = new MainScreen(this);                    // 3
-            RegisterScreen registerscreen = new RegisterScreen(this);        // 4
-            SearchScreen searchscreen = new SearchScreen(this);              // 5
+            LoginScreen loginscreen = new LoginScreen(this);                     // 2
+            MainScreen mainscreen = new MainScreen(this);                        // 3
+            RegisterScreen registerscreen = new RegisterScreen(this);            // 4
+            SearchScreen searchscreen = new SearchScreen(this);                  // 5
             UserProfileScreen userprofilescreen = new UserProfileScreen(this);   // 6
 
             UserControl[] ArrayOfObjects = { calendarscreen, dietscreen, loginscreen, mainscreen, registerscreen, searchscreen, userprofilescreen };

@@ -9,7 +9,6 @@ namespace Dietpolix
     public partial class LoginScreen : UserControl, ILoginScreen
     {
         FormDietpolix parent;
-        APIManagaer apimanager = new APIManagaer();
 
         public LoginScreen(FormDietpolix parent)
         {
@@ -99,7 +98,6 @@ namespace Dietpolix
         {
             if (this.VEvent_OnLogIn != null)
             {
-                apimanager.RunAll();
                 VEvent_OnLogIn(sender, e);
             }
         }
