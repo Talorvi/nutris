@@ -9,6 +9,8 @@ namespace Dietpolix.Views
         event Action<object, EventArgs> VEvent_OnLoad;
         //event EventHandler VEvent_OnRegisterLink;
 
+        void DrawGeneralPieChart();
+
         Control FormDietpolix { get; }
         FormDietpolix parent { get; }
     }

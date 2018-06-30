@@ -16,6 +16,18 @@ namespace Dietpolix.Presenters
             this.mainscreen = mainscreen;
 
             mainscreen.VEvent_OnSelectedIndexChanged += View_VEvent_OnSelectedIndexChanged;
+            mainscreen.VEvent_OnLoad += View_VEvent_OnLoad;
+        }
+
+        private void View_VEvent_OnLoad(object arg1, EventArgs arg2)
+        {
+            if (model.CountBMI(model.user.weight,model.user.height)!=0)
+            {
+                mainscreen.DrawGeneralPieChart();
+                return;
+            }
+            mainscreen.parent.SetUserControl(6);
+            
         }
 
         private void View_VEvent_OnSelectedIndexChanged(object arg1, EventArgs arg2)

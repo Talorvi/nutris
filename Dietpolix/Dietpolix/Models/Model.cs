@@ -1,12 +1,14 @@
 ﻿using Dietpolix.Classes.Managers;
+using Dietpolix.Classes;
 
 namespace Dietpolix.Models
 {
     public class Model
     {
         public DatabaseManager databasemanager = new DatabaseManager();
+        public User user;
 
-        double CountBMI(int weight, int height)
+        public double CountBMI(int weight, int height)
         {
             double BMI = 0;
             if ((weight!=0)&&(height!=0))
@@ -17,7 +19,7 @@ namespace Dietpolix.Models
         }
 
         // minimal need for calories per day
-        double CountBMR(int weight, int height, int age, char sex)        // sex is either f or m
+        public double CountBMR(int weight, int height, int age, char sex)        // sex is either f or m
         {
             double BMR = 0;
             if ((weight != 0) && (height != 0) && (age != 0) && (sex != 0))
@@ -32,7 +34,7 @@ namespace Dietpolix.Models
         }
 
         // maximum need for calories per day
-        double CountCPM(double BMR, int lifestyle, int aim)  
+        public double CountCPM(double BMR, int lifestyle, int aim)  
         // lifestyle -> 1-couchpotato, 2-programmer, etc.
         // aim -> 1-fatreduction, 2-musclemass
         {

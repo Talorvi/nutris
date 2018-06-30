@@ -13,7 +13,7 @@ namespace Dietpolix
         {
             InitializeComponent();
             this.parent = parent;
-            DrawPieChart(2, 5, 3, 4, 1);
+            //DrawPieChart(2, 5, 3, 4, 1);
         }
 
         public Control FormDietpolix
@@ -30,6 +30,25 @@ namespace Dietpolix
             {
                 return parent;
             }
+        }
+
+        public void DrawGeneralPieChart()
+        {
+            chartMyDream.Series.Clear();
+            chartMyDream.Legends.Clear();
+            chartMyDream.Legends.Add("Nutriens");
+            chartMyDream.Legends[0].LegendStyle = LegendStyle.Table;
+            chartMyDream.Legends[0].Docking = Docking.Bottom;
+            chartMyDream.Legends[0].Alignment = StringAlignment.Center;
+            chartMyDream.Legends[0].Title = "General need for nutriens";
+            chartMyDream.Legends[0].BorderColor = Color.Black;
+            string seriesname = "MySeriesName";
+            chartMyDream.Series.Add(seriesname);
+            chartMyDream.Series[seriesname].ChartType = SeriesChartType.Pie;
+
+            chartMyDream.Series[seriesname].Points.AddXY("Proteins", 25);
+            chartMyDream.Series[seriesname].Points.AddXY("Carbohydrates", 55);
+            chartMyDream.Series[seriesname].Points.AddXY("Fat", 20);
         }
 
         private void DrawPieChart(int value1, int value2, int value3, int value4, int value5)
