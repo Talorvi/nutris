@@ -1,6 +1,7 @@
 ﻿using System;
 using Dietpolix.Models;
 using Dietpolix.Views;
+using System.Collections.Generic;
 
 namespace Dietpolix.Presenters
 {
@@ -41,7 +42,8 @@ namespace Dietpolix.Presenters
         }
         private void View_VEvent_OnLoad(object arg1, EventArgs arg2)
         {
-            
+            List<String> userinfo = model.databasemanager.GetUserInfo(model.user.login);
+            model.user = new Classes.User();
         }
     }
 }

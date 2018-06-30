@@ -2,6 +2,13 @@
 {
     public class User
     {
+        public User() { }
+        public User(string login, string name, string sex, int age, int weight, int height, string lifestyle, string aim)
+        {
+            this.login = login;
+            this.name = name;
+            //this.s
+        }
         public uint user_id { get; set; }
         public string login { get; set; }
         public string password { get;  set;}

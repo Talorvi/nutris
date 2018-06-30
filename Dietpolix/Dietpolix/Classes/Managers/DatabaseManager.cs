@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Text;
 using System.Security.Cryptography;
+using System.Collections.Generic;
 
 namespace Dietpolix.Classes.Managers
 {
@@ -17,6 +18,7 @@ namespace Dietpolix.Classes.Managers
         static string QUERY_ADD_USER = "INSERT INTO `users` (`user_id`, `login`, `password`, `name`, `sex`) VALUES (NULL, '{0}', '{1}', '{2}', NULL);";
         static string QUERY_CHECK_LOGIN = "SELECT COUNT(login) AS `liczba` FROM  `users` WHERE login LIKE '{0}'";
         static string QUERY_GET_PASSWORD = "SELECT password FROM `users` WHERE login LIKE '{0}'";
+        static string QUERY_GET_USER_INFO = "SELECT login, name, sex, birth, weight, height, lifestyle, aim from `users` WHERE login LIKE '{0}'";
 
         private MySqlConnectionStringBuilder conStrBuilder;
         private MySqlConnection connection;
@@ -159,6 +161,43 @@ namespace Dietpolix.Classes.Managers
             }
         }
 
+        public List<String> GetUserInfo(string login)
+        {
+            List<String> listofstrings = new List<string>();
+
+            string polecenie = String.Format(QUERY_GET_USER_INFO, login);
+            connection = new MySqlConnection(conStrBuilder.ConnectionString);
+
+            command = new MySqlCommand(polecenie, connection);
+
+            try
+            {
+                connection.Open();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            finally
+            {
+                try
+                {
+                    MySqlDataReader dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        listofstrings = ReadUserInfo((IDataRecord)dataReader);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+                connection.Close();
+            }
+
+            return listofstrings;
+        }
+
         private static int ReadSingleRowCheckLogin(IDataRecord record)
         {
             string str = record[0].ToString();
@@ -168,6 +207,15 @@ namespace Dietpolix.Classes.Managers
         {
             return record[0].ToString();
         } 
+        private static List<String> ReadUserInfo(IDataRecord record)
+        {
+            List<String> listofstrings = new List<string>();
+            for(int i=0; i < record.FieldCount; i++)
+            {
+                listofstrings.Add(record[i].ToString());
+            }
+            return listofstrings;
+        }
 
         private static string GetMd5Hash(MD5 md5Hash, string input)
         {

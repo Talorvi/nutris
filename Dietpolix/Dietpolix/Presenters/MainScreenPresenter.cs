@@ -21,11 +21,11 @@ namespace Dietpolix.Presenters
 
         private void View_VEvent_OnLoad(object arg1, EventArgs arg2)
         {
-            if (model.CountBMI(model.user.weight,model.user.height)!=0)
+            /*if (model.CountBMI(model.user.weight,model.user.height)!=0)
             {
                 mainscreen.DrawGeneralPieChart();
                 return;
-            }
+            }*/
             mainscreen.parent.SetUserControl(6);
             
         }
