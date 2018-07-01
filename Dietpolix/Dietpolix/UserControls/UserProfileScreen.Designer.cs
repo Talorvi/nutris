@@ -251,6 +251,7 @@
             this.buttonSubmitEdit.TabIndex = 9;
             this.buttonSubmitEdit.Text = "Submit";
             this.buttonSubmitEdit.UseVisualStyleBackColor = true;
+            this.buttonSubmitEdit.Click += new System.EventHandler(this.buttonSubmitEdit_Click);
             // 
             // buttonCancelEdit
             // 

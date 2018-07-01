@@ -12,6 +12,7 @@ namespace Dietpolix.Views
         event Action<object, EventArgs> VEvent_OnbuttonCancelPasswordChange;
         event Action<object, EventArgs> VEvent_OnLoad;
         event Action<object, EventArgs> VEvent_OnVisibleChanged;
+        event Action<object, EventArgs> VEvent_OnSubmitEdit;
 
         void ShowEditProfile();
         void ShowChangePassword();

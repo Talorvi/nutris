@@ -19,6 +19,7 @@ namespace Dietpolix.Classes.Managers
         static string QUERY_CHECK_LOGIN = "SELECT COUNT(login) AS `liczba` FROM  `users` WHERE login LIKE '{0}'";
         static string QUERY_GET_PASSWORD = "SELECT password FROM `users` WHERE login LIKE '{0}'";
         static string QUERY_GET_USER_INFO = "SELECT login, name, sex, birth, weight, height, lifestyle, aim from `users` WHERE login LIKE '{0}'";
+        static string QUERY_UPDATE_USER_INFO = "UPDATE `users` SET sex = '{1}', birth = '{2}', weight = '{3}', height = '{4}', lifestyle = '{5}', aim = '{6}' WHERE login = '{0}'";
 
         private MySqlConnectionStringBuilder conStrBuilder;
         private MySqlConnection connection;
@@ -205,6 +206,32 @@ namespace Dietpolix.Classes.Managers
             }
 
             return userinfo;
+        }
+
+        public bool UpdateUserInfo(string login, string sex, string birth, string weight, string height, string lifestyle, string aim)
+        {
+            bool success = false; ;
+            connection = new MySqlConnection(conStrBuilder.ConnectionString);
+            string polecenie = String.Format(QUERY_UPDATE_USER_INFO, login, sex, birth, weight, height, lifestyle, aim);
+
+            command = new MySqlCommand(polecenie, connection);
+
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+                success = true;
+            }
+            return success;
         }
 
         private static int ReadSingleRowCheckLogin(IDataRecord record)
