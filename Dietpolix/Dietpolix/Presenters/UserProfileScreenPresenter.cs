@@ -19,6 +19,8 @@ namespace Dietpolix.Presenters
             userprofilescreen.VEvent_OnbuttonCancelEdit += View_VEvent_OnCancelEdit;
             userprofilescreen.VEvent_OnbuttonChangePassword += View_VEvent_OnbuttonChangePassword;
             userprofilescreen.VEvent_OnbuttonCancelPasswordChange += View_VEvent_OnbuttonCancelPasswordChange;
+            userprofilescreen.VEvent_OnLoad += View_VEvent_OnLoad;
+            userprofilescreen.VEvent_OnVisibleChanged += View_VEvent_OnVisibleChanged;
         }
 
         private void View_VEvent_OnbuttonCancelPasswordChange(object arg1, EventArgs arg2)
@@ -42,8 +44,22 @@ namespace Dietpolix.Presenters
         }
         private void View_VEvent_OnLoad(object arg1, EventArgs arg2)
         {
+
+        }
+        private void View_VEvent_OnVisibleChanged(object arg1, EventArgs arg2)
+        {
             List<String> userinfo = model.databasemanager.GetUserInfo(model.user.login);
-            model.user = new Classes.User();
+            if (userinfo.Count == 8)
+            {
+                model.user = new Classes.User(userinfo[0], userinfo[1], userinfo[2], userinfo[3], Int32.Parse(userinfo[4]), Int32.Parse(userinfo[5]), userinfo[6], userinfo[7]);
+                userprofilescreen.Login = model.user.login;
+                userprofilescreen.Sex = model.user._sex.ToString();
+                userprofilescreen.Age = model.user.age.ToString();
+                userprofilescreen.Weight = model.user.weight.ToString();
+                userprofilescreen.Height = model.user.height.ToString();
+                userprofilescreen.Lifestyle = model.user._lifestyle.ToString();
+                userprofilescreen.Aim = model.user._aim.ToString();
+            }
         }
     }
 }

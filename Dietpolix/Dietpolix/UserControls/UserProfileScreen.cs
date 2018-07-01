@@ -33,14 +33,9 @@ namespace Dietpolix
 
         public string Login
         {
-            get
-            {
-                return textBoxLoginChange.Text;
-            }
-
             set
             {
-                textBoxLoginChange.Text = value;
+                labelUserLogin.Text = value;
             }
         }
 
@@ -93,6 +88,7 @@ namespace Dietpolix
             set
             {
                 comboBoxSexChange.Text = value;
+                labelUserSex.Text = value;
             }
         }
 
@@ -106,6 +102,7 @@ namespace Dietpolix
             set
             {
                 numericUpDownAgeChange.Text = value;
+                labelUserAge.Text = value;
             }
         }
 
@@ -119,6 +116,19 @@ namespace Dietpolix
             set
             {
                 numericUpDownWeightChange.Text = value;
+                labelUserWeight.Text = value;
+            }
+        }
+        new public string Height
+        {
+            get
+            {
+                return numericUpDownHeightChange.Text;
+            }
+            set
+            {
+                numericUpDownHeightChange.Text = value;
+                labelUserHeight.Text = value;
             }
         }
 
@@ -132,6 +142,7 @@ namespace Dietpolix
             set
             {
                 comboBoxLifestyleChange.Text = value;
+                labelUserLifestyle.Text = value;
             }
         }
 
@@ -145,6 +156,7 @@ namespace Dietpolix
             set
             {
                 comboBoxAimChange.Text = value;
+                labelUserAim.Text = value;
             }
         }
 
@@ -153,6 +165,7 @@ namespace Dietpolix
         public event Action<object, EventArgs> VEvent_OnbuttonChangePassword;
         public event Action<object, EventArgs> VEvent_OnbuttonCancelPasswordChange;
         public event Action<object, EventArgs> VEvent_OnLoad;
+        public event Action<object, EventArgs> VEvent_OnVisibleChanged;
 
         public void ShowEditProfile()
         {
@@ -211,6 +224,16 @@ namespace Dietpolix
             if (VEvent_OnLoad != null)
             {
                 VEvent_OnLoad(sender, e);
+            }
+        }
+
+        private void UserProfileScreen_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible == true){
+                if (VEvent_OnVisibleChanged != null)
+                {
+                    VEvent_OnVisibleChanged(sender, e);
+                }
             }
         }
     }

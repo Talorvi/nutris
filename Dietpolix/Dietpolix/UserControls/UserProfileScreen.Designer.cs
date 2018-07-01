@@ -49,7 +49,6 @@
             this.comboBoxLifestyleChange = new System.Windows.Forms.ComboBox();
             this.numericUpDownWeightChange = new System.Windows.Forms.NumericUpDown();
             this.comboBoxSexChange = new System.Windows.Forms.ComboBox();
-            this.textBoxLoginChange = new System.Windows.Forms.TextBox();
             this.groupBoxChangePassword = new System.Windows.Forms.GroupBox();
             this.buttonSubmitPasswordChange = new System.Windows.Forms.Button();
             this.buttonCancelPasswordChange = new System.Windows.Forms.Button();
@@ -191,7 +190,7 @@
             // 
             this.buttonEditProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonEditProfile.Location = new System.Drawing.Point(102, 314);
-            this.buttonEditProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEditProfile.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditProfile.Name = "buttonEditProfile";
             this.buttonEditProfile.Size = new System.Drawing.Size(75, 22);
             this.buttonEditProfile.TabIndex = 11;
@@ -209,11 +208,10 @@
             this.groupBoxEditProfile.Controls.Add(this.comboBoxLifestyleChange);
             this.groupBoxEditProfile.Controls.Add(this.numericUpDownWeightChange);
             this.groupBoxEditProfile.Controls.Add(this.comboBoxSexChange);
-            this.groupBoxEditProfile.Controls.Add(this.textBoxLoginChange);
             this.groupBoxEditProfile.Location = new System.Drawing.Point(242, 52);
-            this.groupBoxEditProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxEditProfile.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxEditProfile.Name = "groupBoxEditProfile";
-            this.groupBoxEditProfile.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxEditProfile.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxEditProfile.Size = new System.Drawing.Size(207, 294);
             this.groupBoxEditProfile.TabIndex = 12;
             this.groupBoxEditProfile.TabStop = false;
@@ -223,7 +221,7 @@
             // numericUpDownHeightChange
             // 
             this.numericUpDownHeightChange.Location = new System.Drawing.Point(4, 155);
-            this.numericUpDownHeightChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDownHeightChange.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownHeightChange.Maximum = new decimal(new int[] {
             300,
             0,
@@ -247,7 +245,7 @@
             // 
             this.buttonSubmitEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSubmitEdit.Location = new System.Drawing.Point(128, 263);
-            this.buttonSubmitEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSubmitEdit.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSubmitEdit.Name = "buttonSubmitEdit";
             this.buttonSubmitEdit.Size = new System.Drawing.Size(75, 22);
             this.buttonSubmitEdit.TabIndex = 9;
@@ -258,7 +256,7 @@
             // 
             this.buttonCancelEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonCancelEdit.Location = new System.Drawing.Point(4, 262);
-            this.buttonCancelEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancelEdit.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelEdit.Name = "buttonCancelEdit";
             this.buttonCancelEdit.Size = new System.Drawing.Size(75, 22);
             this.buttonCancelEdit.TabIndex = 8;
@@ -269,7 +267,7 @@
             // numericUpDownAgeChange
             // 
             this.numericUpDownAgeChange.Location = new System.Drawing.Point(4, 84);
-            this.numericUpDownAgeChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDownAgeChange.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownAgeChange.Minimum = new decimal(new int[] {
             16,
             0,
@@ -291,7 +289,7 @@
             "Fat reduction",
             "Working on lean muscle mass"});
             this.comboBoxAimChange.Location = new System.Drawing.Point(4, 225);
-            this.comboBoxAimChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxAimChange.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxAimChange.Name = "comboBoxAimChange";
             this.comboBoxAimChange.Size = new System.Drawing.Size(199, 21);
             this.comboBoxAimChange.TabIndex = 6;
@@ -306,7 +304,7 @@
             "Fit (3-4 workouts per week + physical work)",
             "Sportsman (workouts almost everyday)"});
             this.comboBoxLifestyleChange.Location = new System.Drawing.Point(4, 190);
-            this.comboBoxLifestyleChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxLifestyleChange.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxLifestyleChange.Name = "comboBoxLifestyleChange";
             this.comboBoxLifestyleChange.Size = new System.Drawing.Size(199, 21);
             this.comboBoxLifestyleChange.TabIndex = 5;
@@ -314,7 +312,7 @@
             // numericUpDownWeightChange
             // 
             this.numericUpDownWeightChange.Location = new System.Drawing.Point(4, 119);
-            this.numericUpDownWeightChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDownWeightChange.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownWeightChange.Maximum = new decimal(new int[] {
             300,
             0,
@@ -336,18 +334,10 @@
             "Female",
             "Male"});
             this.comboBoxSexChange.Location = new System.Drawing.Point(4, 48);
-            this.comboBoxSexChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxSexChange.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxSexChange.Name = "comboBoxSexChange";
             this.comboBoxSexChange.Size = new System.Drawing.Size(199, 21);
             this.comboBoxSexChange.TabIndex = 3;
-            // 
-            // textBoxLoginChange
-            // 
-            this.textBoxLoginChange.Location = new System.Drawing.Point(4, 15);
-            this.textBoxLoginChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBoxLoginChange.Name = "textBoxLoginChange";
-            this.textBoxLoginChange.Size = new System.Drawing.Size(199, 20);
-            this.textBoxLoginChange.TabIndex = 2;
             // 
             // groupBoxChangePassword
             // 
@@ -360,9 +350,9 @@
             this.groupBoxChangePassword.Controls.Add(this.textBoxOldPassword);
             this.groupBoxChangePassword.Controls.Add(this.labeloldpassword);
             this.groupBoxChangePassword.Location = new System.Drawing.Point(533, 91);
-            this.groupBoxChangePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxChangePassword.Name = "groupBoxChangePassword";
-            this.groupBoxChangePassword.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxChangePassword.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxChangePassword.Size = new System.Drawing.Size(185, 255);
             this.groupBoxChangePassword.TabIndex = 13;
             this.groupBoxChangePassword.TabStop = false;
@@ -373,7 +363,7 @@
             // 
             this.buttonSubmitPasswordChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSubmitPasswordChange.Location = new System.Drawing.Point(106, 223);
-            this.buttonSubmitPasswordChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSubmitPasswordChange.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSubmitPasswordChange.Name = "buttonSubmitPasswordChange";
             this.buttonSubmitPasswordChange.Size = new System.Drawing.Size(75, 21);
             this.buttonSubmitPasswordChange.TabIndex = 7;
@@ -384,7 +374,7 @@
             // 
             this.buttonCancelPasswordChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonCancelPasswordChange.Location = new System.Drawing.Point(7, 223);
-            this.buttonCancelPasswordChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancelPasswordChange.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelPasswordChange.Name = "buttonCancelPasswordChange";
             this.buttonCancelPasswordChange.Size = new System.Drawing.Size(75, 21);
             this.buttonCancelPasswordChange.TabIndex = 6;
@@ -395,7 +385,7 @@
             // textBoxNewPassword2
             // 
             this.textBoxNewPassword2.Location = new System.Drawing.Point(7, 151);
-            this.textBoxNewPassword2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNewPassword2.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNewPassword2.Name = "textBoxNewPassword2";
             this.textBoxNewPassword2.Size = new System.Drawing.Size(175, 20);
             this.textBoxNewPassword2.TabIndex = 5;
@@ -413,7 +403,7 @@
             // textBoxNewPassword
             // 
             this.textBoxNewPassword.Location = new System.Drawing.Point(7, 95);
-            this.textBoxNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNewPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNewPassword.Name = "textBoxNewPassword";
             this.textBoxNewPassword.Size = new System.Drawing.Size(175, 20);
             this.textBoxNewPassword.TabIndex = 3;
@@ -431,7 +421,7 @@
             // textBoxOldPassword
             // 
             this.textBoxOldPassword.Location = new System.Drawing.Point(7, 42);
-            this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxOldPassword.Name = "textBoxOldPassword";
             this.textBoxOldPassword.Size = new System.Drawing.Size(175, 20);
             this.textBoxOldPassword.TabIndex = 1;
@@ -471,7 +461,7 @@
             // 
             this.buttonChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonChangePassword.Location = new System.Drawing.Point(653, 15);
-            this.buttonChangePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.buttonChangePassword.Name = "buttonChangePassword";
             this.buttonChangePassword.Size = new System.Drawing.Size(127, 21);
             this.buttonChangePassword.TabIndex = 16;
@@ -523,12 +513,12 @@
             this.Controls.Add(this.labellogin);
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.groupBoxEditProfile);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserProfileScreen";
             this.Size = new System.Drawing.Size(799, 396);
             this.Load += new System.EventHandler(this.UserProfileScreen_Load);
+            this.VisibleChanged += new System.EventHandler(this.UserProfileScreen_VisibleChanged);
             this.groupBoxEditProfile.ResumeLayout(false);
-            this.groupBoxEditProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeightChange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAgeChange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeightChange)).EndInit();
@@ -559,7 +549,6 @@
         private System.Windows.Forms.ComboBox comboBoxLifestyleChange;
         private System.Windows.Forms.NumericUpDown numericUpDownWeightChange;
         private System.Windows.Forms.ComboBox comboBoxSexChange;
-        private System.Windows.Forms.TextBox textBoxLoginChange;
         private System.Windows.Forms.GroupBox groupBoxChangePassword;
         private System.Windows.Forms.Label labelaim;
         private System.Windows.Forms.Label labelUserAim;

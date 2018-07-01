@@ -163,10 +163,10 @@ namespace Dietpolix.Classes.Managers
 
         public List<String> GetUserInfo(string login)
         {
-            List<String> listofstrings = new List<string>();
+            List<String> userinfo = new List<string>();
 
-            string polecenie = String.Format(QUERY_GET_USER_INFO, login);
             connection = new MySqlConnection(conStrBuilder.ConnectionString);
+            string polecenie = String.Format(QUERY_GET_USER_INFO, login);
 
             command = new MySqlCommand(polecenie, connection);
 
@@ -180,22 +180,31 @@ namespace Dietpolix.Classes.Managers
             }
             finally
             {
+                MySqlDataReader dataReader = command.ExecuteReader();
                 try
                 {
-                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        listofstrings = ReadUserInfo((IDataRecord)dataReader);
+                        userinfo.Add(SafeGetString(dataReader, 0));
+                        userinfo.Add(SafeGetString(dataReader, 1));
+                        userinfo.Add(SafeGetString(dataReader, 2));
+                        userinfo.Add(SafeGetString(dataReader, 3).Remove(10));
+                        userinfo.Add(SafeGetString(dataReader, 4));
+                        userinfo.Add(SafeGetString(dataReader, 5));
+                        userinfo.Add(SafeGetString(dataReader, 6));
+                        userinfo.Add(SafeGetString(dataReader, 7));
+                        Console.WriteLine(userinfo.Count);
                     }
                 }
                 catch (Exception exception)
                 {
                     Console.WriteLine(exception.Message);
                 }
+
                 connection.Close();
             }
 
-            return listofstrings;
+            return userinfo;
         }
 
         private static int ReadSingleRowCheckLogin(IDataRecord record)
@@ -212,11 +221,11 @@ namespace Dietpolix.Classes.Managers
             List<String> listofstrings = new List<string>();
             for(int i=0; i < record.FieldCount; i++)
             {
-                listofstrings.Add(record[i].ToString());
+                listofstrings.Add(record.GetValue(i).ToString());
+                Console.WriteLine(record.GetValue(i).ToString());
             }
             return listofstrings;
         }
-
         private static string GetMd5Hash(MD5 md5Hash, string input)
         {
             byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
@@ -243,6 +252,12 @@ namespace Dietpolix.Classes.Managers
             {
                 return false;
             }
+        }
+        private static string SafeGetString(MySqlDataReader reader, int colIndex)
+        {
+            if (!reader.IsDBNull(colIndex))
+                return reader.GetString(colIndex);
+            return string.Empty;
         }
     }
 }

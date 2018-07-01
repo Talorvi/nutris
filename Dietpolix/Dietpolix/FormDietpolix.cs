@@ -50,8 +50,10 @@ namespace Dietpolix
         {
             foreach (UserControl usercontrol in groupBox.Controls)
             {
+                usercontrol.Visible = false;
                 usercontrol.Hide();
             }
+            groupBox.Controls[id].Visible = true;
             groupBox.Controls[id].Show();
         }
 
@@ -75,6 +77,7 @@ namespace Dietpolix
 
         private void OnStart()
         {
+            model.user = new Classes.User();
             CalendarScreen calendarscreen = new CalendarScreen(this);            // 0
             DietScreen dietscreen = new DietScreen(this);                        // 1
             LoginScreen loginscreen = new LoginScreen(this);                     // 2

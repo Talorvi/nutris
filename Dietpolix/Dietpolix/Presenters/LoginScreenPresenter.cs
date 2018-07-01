@@ -31,6 +31,7 @@ namespace Dietpolix.Presenters
                 bool successLogin = model.databasemanager.TryToLogIn(loginscreen.Login, loginscreen.Password);
                 if (successLogin == true)
                 {
+                    model.user.login = loginscreen.Login;
                     loginscreen.parent.SetUserControl(3);
                     loginscreen.parent.ShowMenu();
                 }
