@@ -20,6 +20,7 @@ namespace Dietpolix.Classes.Managers
         static string QUERY_GET_PASSWORD = "SELECT password FROM `users` WHERE login LIKE '{0}'";
         static string QUERY_GET_USER_INFO = "SELECT login, name, sex, birth, weight, height, lifestyle, aim from `users` WHERE login LIKE '{0}'";
         static string QUERY_UPDATE_USER_INFO = "UPDATE `users` SET sex = '{1}', birth = '{2}', weight = '{3}', height = '{4}', lifestyle = '{5}', aim = '{6}' WHERE login = '{0}'";
+        static string QUERY_UPDATE_USER_PASSWORD = "UPDATE `users` SET password = '{1}' WHERE login = '{0}'";
 
         private MySqlConnectionStringBuilder conStrBuilder;
         private MySqlConnection connection;
@@ -230,6 +231,43 @@ namespace Dietpolix.Classes.Managers
             {
                 connection.Close();
                 success = true;
+            }
+            return success;
+        }
+
+        public bool UpdatePassword(string login, string oldpassword, string newpassword)
+        {
+            bool success = false;
+            bool oldpasswordvalid = TryToLogIn(login, oldpassword);
+
+            if (oldpasswordvalid == true)
+            {
+                //creating md5 string
+                using (MD5 md5Hash = MD5.Create())
+                {
+                    newpassword = GetMd5Hash(md5Hash, newpassword);
+                }
+
+                string polecenie = String.Format(QUERY_UPDATE_USER_PASSWORD, login, newpassword);
+                connection = new MySqlConnection(conStrBuilder.ConnectionString);
+
+                command = new MySqlCommand(polecenie, connection);
+
+                try
+                {
+                    connection.Open();
+                    MySqlDataReader dataReader = command.ExecuteReader();
+                    success = true;
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                    success = false;
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
             return success;
         }

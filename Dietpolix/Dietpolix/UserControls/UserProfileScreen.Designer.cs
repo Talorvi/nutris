@@ -370,6 +370,7 @@
             this.buttonSubmitPasswordChange.TabIndex = 7;
             this.buttonSubmitPasswordChange.Text = "Submit";
             this.buttonSubmitPasswordChange.UseVisualStyleBackColor = true;
+            this.buttonSubmitPasswordChange.Click += new System.EventHandler(this.buttonSubmitPasswordChange_Click);
             // 
             // buttonCancelPasswordChange
             // 

@@ -22,6 +22,7 @@ namespace Dietpolix.Presenters
             userprofilescreen.VEvent_OnLoad += View_VEvent_OnLoad;
             userprofilescreen.VEvent_OnVisibleChanged += View_VEvent_OnVisibleChanged;
             userprofilescreen.VEvent_OnSubmitEdit += View_VEvent_OnSubmitEdit;
+            userprofilescreen.VEvent_OnSubmitPasswordChange += View_VEvent_OnSubmitPasswordChange;
         }
 
         private void View_VEvent_OnbuttonCancelPasswordChange(object arg1, EventArgs arg2)
@@ -67,6 +68,14 @@ namespace Dietpolix.Presenters
             //TO-DO Verification
             model.databasemanager.UpdateUserInfo(model.user.login, userprofilescreen.Sex, "1999-11-11", userprofilescreen.Weight, userprofilescreen.Height, userprofilescreen.Lifestyle, userprofilescreen.Aim);
             View_VEvent_OnVisibleChanged(arg1, arg2);
+        }
+        private void View_VEvent_OnSubmitPasswordChange(object arg1, EventArgs arg2)
+        {
+            //TO-DO Verification
+            if(model.databasemanager.UpdatePassword(model.user.login, userprofilescreen.OldPassword, userprofilescreen.Password1) == true)
+            {
+                userprofilescreen.parent.SetUserControl(2);
+            }
         }
     }
 }

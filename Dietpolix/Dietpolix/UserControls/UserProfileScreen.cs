@@ -167,6 +167,7 @@ namespace Dietpolix
         public event Action<object, EventArgs> VEvent_OnLoad;
         public event Action<object, EventArgs> VEvent_OnVisibleChanged;
         public event Action<object, EventArgs> VEvent_OnSubmitEdit;
+        public event Action<object, EventArgs> VEvent_OnSubmitPasswordChange;
 
         public void ShowEditProfile()
         {
@@ -243,6 +244,14 @@ namespace Dietpolix
             if (VEvent_OnSubmitEdit != null)
             {
                 VEvent_OnSubmitEdit(sender, e);
+            }
+        }
+
+        private void buttonSubmitPasswordChange_Click(object sender, EventArgs e)
+        {
+            if (VEvent_OnSubmitPasswordChange != null)
+            {
+                VEvent_OnSubmitPasswordChange(sender, e);
             }
         }
     }
