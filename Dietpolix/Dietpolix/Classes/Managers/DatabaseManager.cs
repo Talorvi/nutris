@@ -25,7 +25,7 @@ namespace Dietpolix.Classes.Managers
         static string QUERY_ADD_PRODUCT = "INSERT INTO `products` (`product_id`, `name`, `calories`, `total_carbohydrate`, `total_fat`, `sodium`, `sugar`, `protein`, `serving_gram_weight`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
         static string QUERY_ADD_CONSUMPTION = "INSERT INTO `consumption` (`login`, `product_id`, `quantity`, `date`) VALUES ('{0}', '{1}', '{2}', '{3}')";
         static string QUERY_REMOVE_CONSUMPTION = "DELETE FROM `consumption` WHERE login LIKE '{0}' AND product_id = {1} AND quantity = {2} AND date LIKE '{3}'";
-        //static string QUERY_GET_CONSUMTION = 
+        //static string QUERY_GET_CONSUMTION = TO-DP getting name of products that have been eaten by user on some date 
 
         private MySqlConnectionStringBuilder conStrBuilder;
         private MySqlConnection connection;
