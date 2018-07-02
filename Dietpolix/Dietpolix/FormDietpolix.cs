@@ -5,6 +5,7 @@ using Dietpolix.Views;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Dietpolix.Classes.Managers;
 
 
 namespace Dietpolix
@@ -17,6 +18,7 @@ namespace Dietpolix
             OnStart();
             groupBox.Controls.AddRange(ListOfObjects.ToArray());
             SetUserControl(2);
+            APIManager api = new APIManager();
         }
         void IFormDietpolix.SetUserControl(int id)
         {

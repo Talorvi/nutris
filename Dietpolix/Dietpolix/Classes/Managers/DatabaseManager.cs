@@ -15,12 +15,17 @@ namespace Dietpolix.Classes.Managers
         static string DATABASE = "dietpolix_db";
         static uint PORT = 3306;
 
-        static string QUERY_ADD_USER = "INSERT INTO `users` (`user_id`, `login`, `password`, `name`, `sex`) VALUES (NULL, '{0}', '{1}', '{2}', NULL);";
+        static string QUERY_ADD_USER = "INSERT INTO `users` (`login`, `password`, `name`, `sex`) VALUES (NULL, '{0}', '{1}', '{2}', NULL);";
         static string QUERY_CHECK_LOGIN = "SELECT COUNT(login) AS `liczba` FROM  `users` WHERE login LIKE '{0}'";
+        static string QUERY_CHECK_PRODUCT = "SELECT COUNT(name) AS `liczba` FROM  `products` WHERE name LIKE '{0}'";
         static string QUERY_GET_PASSWORD = "SELECT password FROM `users` WHERE login LIKE '{0}'";
         static string QUERY_GET_USER_INFO = "SELECT login, name, sex, birth, weight, height, lifestyle, aim from `users` WHERE login LIKE '{0}'";
         static string QUERY_UPDATE_USER_INFO = "UPDATE `users` SET sex = '{1}', birth = '{2}', weight = '{3}', height = '{4}', lifestyle = '{5}', aim = '{6}' WHERE login = '{0}'";
         static string QUERY_UPDATE_USER_PASSWORD = "UPDATE `users` SET password = '{1}' WHERE login = '{0}'";
+        static string QUERY_ADD_PRODUCT = "INSERT INTO `products` (`product_id`, `name`, `calories`, `total_carbohydrate`, `total_fat`, `sodium`, `sugar`, `protein`, `serving_gram_weight`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
+        static string QUERY_ADD_CONSUMPTION = "INSERT INTO `consumption` (`login`, `product_id`, `quantity`, `date`) VALUES ('{0}', '{1}', '{2}', '{3}')";
+        static string QUERY_REMOVE_CONSUMPTION = "DELETE FROM `consumption` WHERE login LIKE '{0}' AND product_id = {1} AND quantity = {2} AND date LIKE '{3}'";
+        //static string QUERY_GET_CONSUMTION = 
 
         private MySqlConnectionStringBuilder conStrBuilder;
         private MySqlConnection connection;
@@ -67,6 +72,72 @@ namespace Dietpolix.Classes.Managers
                 connection.Close();
             }
             return canadd;
+        }
+
+        public void AddProduct(string id, string name, decimal? calories, decimal? total_carbohydrate, decimal? total_fat, decimal? sodium, decimal? sugars, decimal? protein, decimal? serving_weight_grams)
+        {
+            string polecenie = String.Format(QUERY_ADD_PRODUCT, id, name, calories.ToString(), total_carbohydrate.ToString(), total_fat.ToString(), sodium.ToString(), sugars.ToString(), protein.ToString(), serving_weight_grams.ToString());
+            connection = new MySqlConnection(conStrBuilder.ConnectionString);
+
+            command = new MySqlCommand(polecenie, connection);
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader dataReader = command.ExecuteReader();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public void AddConsumption(string login, string product_id, string quantity, string date)
+        {
+            string polecenie = String.Format(QUERY_ADD_CONSUMPTION, login, product_id, quantity, date);
+            connection = new MySqlConnection(conStrBuilder.ConnectionString);
+
+            command = new MySqlCommand(polecenie, connection);
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader dataReader = command.ExecuteReader();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public void RemoveConsumption(string login, string product_id, string quantity, string date)
+        {
+            string polecenie = String.Format(QUERY_REMOVE_CONSUMPTION, login, product_id, quantity, date);
+            connection = new MySqlConnection(conStrBuilder.ConnectionString);
+
+            command = new MySqlCommand(polecenie, connection);
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader dataReader = command.ExecuteReader();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         public bool TryToLogIn(string login, string password)
@@ -154,6 +225,51 @@ namespace Dietpolix.Classes.Managers
             }
 
             if (countLogins != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CheckIfProductExists(string productname)
+        {
+            int countProducts = 0;
+
+            connection = new MySqlConnection(conStrBuilder.ConnectionString);
+            string polecenie = String.Format(QUERY_CHECK_PRODUCT, productname);
+
+            command = new MySqlCommand(polecenie, connection);
+
+            try
+            {
+                connection.Open();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            finally
+            {
+                MySqlDataReader dataReader = command.ExecuteReader();
+                try
+                {
+                    while (dataReader.Read())
+                    {
+                        countProducts = ReadSingleRowCheckLogin((IDataRecord)dataReader);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+
+                connection.Close();
+            }
+
+            if (countProducts != 0)
             {
                 return true;
             }

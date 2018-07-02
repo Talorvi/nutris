@@ -1,12 +1,15 @@
 ﻿using Dietpolix.Classes.Managers;
 using Dietpolix.Classes;
+using System.Collections.Generic;
 
 namespace Dietpolix.Models
 {
     public class Model
     {
+        public APIManager apimanager = new APIManager();
         public DatabaseManager databasemanager = new DatabaseManager();
         public User user;
+        public List<Product> listofproducts = new List<Product>();
 
         public double CountBMI(int weight, int height)
         {
