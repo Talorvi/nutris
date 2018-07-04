@@ -15,7 +15,7 @@ namespace Dietpolix.Classes.Managers
         static string DATABASE = "dietpolix_db";
         static uint PORT = 3306;
 
-        static string QUERY_ADD_USER = "INSERT INTO `users` (`login`, `password`, `name`, `sex`) VALUES (NULL, '{0}', '{1}', '{2}', NULL);";
+        static string QUERY_ADD_USER = "INSERT INTO `users` (`login`, `password`, `name`, `sex`) VALUES ('{0}', '{1}', '{2}', NULL);";
         static string QUERY_CHECK_LOGIN = "SELECT COUNT(login) AS `liczba` FROM  `users` WHERE login LIKE '{0}'";
         static string QUERY_CHECK_PRODUCT = "SELECT COUNT(name) AS `liczba` FROM  `products` WHERE name LIKE '{0}'";
         static string QUERY_GET_PASSWORD = "SELECT password FROM `users` WHERE login LIKE '{0}'";
@@ -25,7 +25,8 @@ namespace Dietpolix.Classes.Managers
         static string QUERY_ADD_PRODUCT = "INSERT INTO `products` (`product_id`, `name`, `calories`, `total_carbohydrate`, `total_fat`, `sodium`, `sugar`, `protein`, `serving_gram_weight`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
         static string QUERY_ADD_CONSUMPTION = "INSERT INTO `consumption` (`login`, `product_id`, `quantity`, `date`) VALUES ('{0}', '{1}', '{2}', '{3}')";
         static string QUERY_REMOVE_CONSUMPTION = "DELETE FROM `consumption` WHERE login LIKE '{0}' AND product_id = {1} AND quantity = {2} AND date LIKE '{3}'";
-        //static string QUERY_GET_CONSUMTION = TO-DP getting name of products that have been eaten by user on some date 
+        static string QUERY_GET_CONSUMPTION = "SELECT * FROM consumption JOIN products ON consumption.product_id = products.product_id JOIN users ON consumption.login = users.login WHERE consumption.date BETWEEN '{0}' AND '{1}'";
+        static string QUERY_GET_ALL_PRODUCTS = "Select * FROM products";
 
         private MySqlConnectionStringBuilder conStrBuilder;
         private MySqlConnection connection;
@@ -74,9 +75,10 @@ namespace Dietpolix.Classes.Managers
             return canadd;
         }
 
-        public void AddProduct(string id, string name, decimal? calories, decimal? total_carbohydrate, decimal? total_fat, decimal? sodium, decimal? sugars, decimal? protein, decimal? serving_weight_grams)
+        public void AddProduct(string id, string name, decimal? calories, decimal? total_carbohydrate, decimal? total_fat, decimal? sodium, decimal? sugar, decimal? protein, decimal? serving_weight_grams)
         {
-            string polecenie = String.Format(QUERY_ADD_PRODUCT, id, name, calories.ToString(), total_carbohydrate.ToString(), total_fat.ToString(), sodium.ToString(), sugars.ToString(), protein.ToString(), serving_weight_grams.ToString());
+            string polecenie = String.Format(QUERY_ADD_PRODUCT, name, calories.ToString(), total_carbohydrate.ToString(), total_fat.ToString(), sodium.ToString(), sugar.ToString(), protein.ToString(), serving_weight_grams.ToString());
+            Console.WriteLine(QUERY_ADD_PRODUCT);
             connection = new MySqlConnection(conStrBuilder.ConnectionString);
 
             command = new MySqlCommand(polecenie, connection);
@@ -325,6 +327,84 @@ namespace Dietpolix.Classes.Managers
             return userinfo;
         }
 
+        public List<Product> GetAllProducts()
+        {
+            List<Product> products = new List<Product>();
+
+            connection = new MySqlConnection(conStrBuilder.ConnectionString);
+            string polecenie = String.Format(QUERY_GET_ALL_PRODUCTS);
+
+            command = new MySqlCommand(polecenie, connection);
+
+            try
+            {
+                connection.Open();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            finally
+            {
+                MySqlDataReader dataReader = command.ExecuteReader();
+                try
+                {
+                    while (dataReader.Read())
+                    {
+                        products.Add(new Product(SafeGetString(dataReader, 0), SafeGetString(dataReader, 1), Convert.ToDecimal(SafeGetString(dataReader, 2)), Convert.ToDecimal(SafeGetString(dataReader, 3)), Convert.ToDecimal(SafeGetString(dataReader, 4)), Convert.ToDecimal(SafeGetString(dataReader, 5)), Convert.ToDecimal(SafeGetString(dataReader, 6)), Convert.ToDecimal(SafeGetString(dataReader, 7)), Convert.ToDecimal(SafeGetString(dataReader, 8))));
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+
+                connection.Close();
+            }
+
+            return products;
+        }
+
+        public List<Consumption> GetConsumption(string datefrom, string dateto)
+        {
+            List<Consumption> consumptions = new List<Consumption>();
+
+            connection = new MySqlConnection(conStrBuilder.ConnectionString);
+            string polecenie = String.Format(QUERY_GET_CONSUMPTION, datefrom, dateto);
+
+            command = new MySqlCommand(polecenie, connection);
+
+            try
+            {
+                connection.Open();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            finally
+            {
+                MySqlDataReader dataReader = command.ExecuteReader();
+                try
+                {
+                    while (dataReader.Read())
+                    {
+                        consumptions.Add(new Consumption(SafeGetString(dataReader, 0), SafeGetString(dataReader, 1), SafeGetString(dataReader, 2), SafeGetString(dataReader, 3)));
+                        //Console.WriteLine(SafeGetString(dataReader, 0));    
+                        //Console.WriteLine(consumptions[0].date);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+
+                connection.Close();
+            }
+
+            return consumptions;
+        }
+
         public bool UpdateUserInfo(string login, string sex, string birth, string weight, string height, string lifestyle, string aim)
         {
             bool success = false; ;
@@ -403,7 +483,6 @@ namespace Dietpolix.Classes.Managers
             for(int i=0; i < record.FieldCount; i++)
             {
                 listofstrings.Add(record.GetValue(i).ToString());
-                Console.WriteLine(record.GetValue(i).ToString());
             }
             return listofstrings;
         }

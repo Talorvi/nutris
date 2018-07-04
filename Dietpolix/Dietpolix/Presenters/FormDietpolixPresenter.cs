@@ -20,6 +20,7 @@ namespace Dietpolix.Presenters
             formdietpolix.VEvent_OncalendarToolStripMenuItem += View_VEvent_OncalendarToolStripMenuItem;
             formdietpolix.VEvent_OnsearchToolStripMenuItem += View_VEvent_OnsearchToolStripMenuItem;
             formdietpolix.VEvent_OndietToolStripMenuItem += View_VEvent_OndietToolStripMenuItem;
+            model.databasemanager.GetConsumption("2018-07-02", "2018-07-22");
         }
 
         private void View_VEvent_OndietToolStripMenuItem(object sender, EventArgs e)
