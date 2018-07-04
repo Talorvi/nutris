@@ -25,7 +25,7 @@ namespace Dietpolix.Classes.Managers
         static string QUERY_ADD_PRODUCT = "INSERT INTO `products` (`product_id`, `name`, `calories`, `total_carbohydrate`, `total_fat`, `sodium`, `sugar`, `protein`, `serving_gram_weight`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
         static string QUERY_ADD_CONSUMPTION = "INSERT INTO `consumption` (`login`, `product_id`, `quantity`, `date`) VALUES ('{0}', '{1}', '{2}', '{3}')";
         static string QUERY_REMOVE_CONSUMPTION = "DELETE FROM `consumption` WHERE login LIKE '{0}' AND product_id = {1} AND quantity = {2} AND date LIKE '{3}'";
-        static string QUERY_GET_CONSUMPTION = "SELECT * FROM consumption JOIN products ON consumption.product_id = products.product_id JOIN users ON consumption.login = users.login WHERE consumption.date BETWEEN '{0}' AND '{1}'";
+        static string QUERY_GET_CONSUMPTION = "SELECT users.login, products.name, products.calories, consumption.date FROM consumption JOIN products ON consumption.product_id = products.product_id JOIN users ON consumption.login = users.login WHERE users.login = '{0}' AND consumption.date BETWEEN '{1}' AND '{2}'";
         static string QUERY_GET_ALL_PRODUCTS = "Select * FROM products";
 
         private MySqlConnectionStringBuilder conStrBuilder;
@@ -365,12 +365,12 @@ namespace Dietpolix.Classes.Managers
             return products;
         }
 
-        public List<Consumption> GetConsumption(string datefrom, string dateto)
+        public List<Diet> GetConsumption(string login, string datefrom, string dateto)
         {
-            List<Consumption> consumptions = new List<Consumption>();
+            List<Diet> diets = new List<Diet>();
 
             connection = new MySqlConnection(conStrBuilder.ConnectionString);
-            string polecenie = String.Format(QUERY_GET_CONSUMPTION, datefrom, dateto);
+            string polecenie = String.Format(QUERY_GET_CONSUMPTION, login, datefrom, dateto);
 
             command = new MySqlCommand(polecenie, connection);
 
@@ -389,9 +389,7 @@ namespace Dietpolix.Classes.Managers
                 {
                     while (dataReader.Read())
                     {
-                        consumptions.Add(new Consumption(SafeGetString(dataReader, 0), SafeGetString(dataReader, 1), SafeGetString(dataReader, 2), SafeGetString(dataReader, 3)));
-                        //Console.WriteLine(SafeGetString(dataReader, 0));    
-                        //Console.WriteLine(consumptions[0].date);
+                        diets.Add(new Diet(SafeGetString(dataReader, 0), SafeGetString(dataReader, 1), SafeGetString(dataReader, 2), SafeGetString(dataReader, 3)));
                     }
                 }
                 catch (Exception exception)
@@ -402,7 +400,7 @@ namespace Dietpolix.Classes.Managers
                 connection.Close();
             }
 
-            return consumptions;
+            return diets;
         }
 
         public bool UpdateUserInfo(string login, string sex, string birth, string weight, string height, string lifestyle, string aim)

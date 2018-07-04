@@ -39,6 +39,9 @@ namespace Dietpolix.Presenters
                 }
             }
             searchscreen.ListOfProducts = ListOfProductNames.ToArray();
+
+            List<Diet> consumptions = model.databasemanager.GetConsumption("test","2018-07-02", "2018-07-22");
+            model.printingmanager.CreatePDF(consumptions, "2018-07-02", "2018-07-22");
         }
         //TO-DO finish printing product detail
         private string desc = "Calories: {0} Total fat: {1} Portion weight: {2}";

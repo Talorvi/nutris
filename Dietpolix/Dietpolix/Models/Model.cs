@@ -9,13 +9,10 @@ namespace Dietpolix.Models
     {
         public APIManager apimanager = new APIManager();
         public DatabaseManager databasemanager = new DatabaseManager();
+        public PrintingManager printingmanager = new PrintingManager();
+
         public User user;
         public List<Product> listofproducts = new List<Product>();
-
-        public void PrintDiet()
-        {
-            //TO-DO printing diet
-        }
 
         public string RemoveSpecialCharacters(string str)
         {
