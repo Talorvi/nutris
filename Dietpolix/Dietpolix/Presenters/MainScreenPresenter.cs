@@ -15,7 +15,6 @@ namespace Dietpolix.Presenters
             this.model = model;
             this.mainscreen = mainscreen;
 
-            mainscreen.VEvent_OnSelectedIndexChanged += View_VEvent_OnSelectedIndexChanged;
             mainscreen.VEvent_OnLoad += View_VEvent_OnLoad;
             mainscreen.VEvent_OnlinkLabelGotouserprofile += View_VEvent_OnlinkLabelGotouserprofile;
         }
@@ -28,18 +27,16 @@ namespace Dietpolix.Presenters
         private void View_VEvent_OnLoad(object arg1, EventArgs arg2)
         {
             //TO-DO please, don't crash :(
-            if (model.CountBMI(model.user.weight,model.user.height)==0)
+            if (model.CountBMI(model.user.weight, model.user.height) == 0)
             {
                 mainscreen.DrawGeneralPieChart();
                 return;
             }
-            mainscreen.parent.SetUserControl(6);
-            
-        }
-
-        private void View_VEvent_OnSelectedIndexChanged(object arg1, EventArgs arg2)
-        {
-            
+            int age= Int32.Parse(model.user.age);
+            double bmr = model.CountBMR(model.user.weight, model.user.height, age, model.user._sex.ToString());
+            mainscreen.ShowInfo(model.CountBMI(model.user.weight, model.user.height),
+                model.CountBMR(model.user.weight, model.user.height, age, model.user._sex.ToString()),
+                model.CountCPM(bmr, model.user._lifestyle.ToString(), model.user._aim.ToString()));
         }
     }
 }

@@ -79,17 +79,14 @@ namespace Dietpolix
             chartMyDream.Series[seriesname].Points.AddXY("MyPointName4", value5);
         }
 
-        public event Action<object, EventArgs> VEvent_OnSelectedIndexChanged;
+        public void ShowInfo(double bmi, double bmr, double cpm)
+        {
+            labelUserBMI.Text = bmi.ToString();
+            labelUserCaloriesDemand.Text = bmr.ToString() + " - " + cpm.ToString();
+        }
+
         public event Action<object, EventArgs> VEvent_OnLoad;
         public event Action<object, EventArgs> VEvent_OnlinkLabelGotouserprofile;
-
-        private void listBoxTodayDietProducts_SelectedIndexChanged(object sender, System.EventArgs e)
-        {
-            if (this.VEvent_OnSelectedIndexChanged != null)
-            {
-                VEvent_OnSelectedIndexChanged(sender, e);
-            }
-        }
 
         private void MainScreen_Load(object sender, EventArgs e)
         {
