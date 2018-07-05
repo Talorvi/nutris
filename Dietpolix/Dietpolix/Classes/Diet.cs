@@ -2,19 +2,18 @@
 
 namespace Dietpolix.Classes
 {
-    public class Consumption
+    public class Diet
     {
-        public Consumption(string login, string product_id, string quantity, string date)
+        public Diet(string login, string product_name, string quantity, string date)
         {
             this.login = login;
-            this.product_id = Int32.Parse(product_id);
+            this.product_name = product_name;
             this.quantity = Decimal.Parse(quantity);
             this.date = date;
         }
         public string login { get; set; }
-        public int product_id { get; set; }
+        public string product_name { get; set; }
         public decimal? quantity { get; set; }
         public string date { get; set; }
-
     }
 }

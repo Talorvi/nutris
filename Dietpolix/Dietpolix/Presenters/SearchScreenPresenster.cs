@@ -29,21 +29,27 @@ namespace Dietpolix.Presenters
         {
             model.listofproducts = model.apimanager.SearchItems(searchscreen.ProductName);
 
-            //TO-DO check if each product exists in database (compare ids)
             List<string> ListOfProductNames = new List<string>();
             foreach(var product in model.listofproducts)
             {
                 ListOfProductNames.Add(product.name);
+                if (model.databasemanager.CheckIfProductExists(product.name) == false)
+                {
+                    model.databasemanager.AddProduct(null, product.name, product.calories, product.total_carbohydrate, product.total_fat, product.sodium, product.sugars, product.protein, product.serving_weight_grams);
+                }
             }
             searchscreen.ListOfProducts = ListOfProductNames.ToArray();
+
+            List<Diet> consumptions = model.databasemanager.GetConsumption("test","2018-07-02", "2018-07-22");
+            model.printingmanager.CreatePDF(consumptions, "2018-07-02", "2018-07-22");
         }
         //TO-DO finish printing product detail
-        private string desc = "Calories: {0} Total fat: {1}";
+        private string desc = "Calories: {0} Total fat: {1} Portion weight: {2}";
         private void View_VEvent_OnProductSelectedIndexChanged(object arg1, EventArgs arg2)
         {
             if (searchscreen.SelectedProductID != -1 && model.listofproducts != null)
             {
-                string description = String.Format(desc, model.listofproducts[searchscreen.SelectedProductID].calories, model.listofproducts[searchscreen.SelectedProductID].total_fat);
+                string description = String.Format(desc, model.listofproducts[searchscreen.SelectedProductID].calories, model.listofproducts[searchscreen.SelectedProductID].total_fat, model.listofproducts[searchscreen.SelectedProductID].serving_weight_grams);
                 searchscreen.ProductDetails = description;
             }
         }
