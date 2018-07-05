@@ -15,7 +15,7 @@ namespace Dietpolix.Classes.Managers
         static string DATABASE = "dietpolix_db";
         static uint PORT = 3306;
 
-        static string QUERY_ADD_USER = "INSERT INTO `users` (`login`, `password`, `name`, `sex`) VALUES (NULL, '{0}', '{1}', '{2}', NULL);";
+        static string QUERY_ADD_USER = "INSERT INTO `users` (`login`, `password`, `name`, `sex`) VALUES ('{0}', '{1}', '{2}', NULL);";
         static string QUERY_CHECK_LOGIN = "SELECT COUNT(login) AS `liczba` FROM  `users` WHERE login LIKE '{0}'";
         static string QUERY_CHECK_PRODUCT = "SELECT COUNT(name) AS `liczba` FROM  `products` WHERE name LIKE '{0}'";
         static string QUERY_GET_PASSWORD = "SELECT password FROM `users` WHERE login LIKE '{0}'";

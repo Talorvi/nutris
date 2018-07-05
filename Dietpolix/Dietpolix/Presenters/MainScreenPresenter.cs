@@ -17,16 +17,22 @@ namespace Dietpolix.Presenters
 
             mainscreen.VEvent_OnSelectedIndexChanged += View_VEvent_OnSelectedIndexChanged;
             mainscreen.VEvent_OnLoad += View_VEvent_OnLoad;
+            mainscreen.VEvent_OnlinkLabelGotouserprofile += View_VEvent_OnlinkLabelGotouserprofile;
+        }
+
+        private void View_VEvent_OnlinkLabelGotouserprofile(object arg1, EventArgs arg2)
+        {
+            mainscreen.parent.SetUserControl(6);
         }
 
         private void View_VEvent_OnLoad(object arg1, EventArgs arg2)
         {
             //TO-DO please, don't crash :(
-            /*if (model.CountBMI(model.user.weight,model.user.height)!=0)
+            if (model.CountBMI(model.user.weight,model.user.height)==0)
             {
                 mainscreen.DrawGeneralPieChart();
                 return;
-            }*/
+            }
             mainscreen.parent.SetUserControl(6);
             
         }

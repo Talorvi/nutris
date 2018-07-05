@@ -287,8 +287,8 @@
             // 
             this.comboBoxAimChange.FormattingEnabled = true;
             this.comboBoxAimChange.Items.AddRange(new object[] {
-            "Fat reduction",
-            "Working on lean muscle mass"});
+            "FatReduction",
+            "MuscleMass"});
             this.comboBoxAimChange.Location = new System.Drawing.Point(4, 225);
             this.comboBoxAimChange.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxAimChange.Name = "comboBoxAimChange";
@@ -299,11 +299,11 @@
             // 
             this.comboBoxLifestyleChange.FormattingEnabled = true;
             this.comboBoxLifestyleChange.Items.AddRange(new object[] {
-            "Couch potato (no workouts)",
-            "Programmer (1-2 workouts per week)",
-            "Balanced (3-4 workouts per week)",
-            "Fit (3-4 workouts per week + physical work)",
-            "Sportsman (workouts almost everyday)"});
+            "CouchPotato",
+            "Programmer",
+            "Balanced",
+            "Fit",
+            "Sportsman"});
             this.comboBoxLifestyleChange.Location = new System.Drawing.Point(4, 190);
             this.comboBoxLifestyleChange.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxLifestyleChange.Name = "comboBoxLifestyleChange";
@@ -465,7 +465,7 @@
             this.buttonChangePassword.Location = new System.Drawing.Point(653, 15);
             this.buttonChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.buttonChangePassword.Name = "buttonChangePassword";
-            this.buttonChangePassword.Size = new System.Drawing.Size(127, 21);
+            this.buttonChangePassword.Size = new System.Drawing.Size(127, 30);
             this.buttonChangePassword.TabIndex = 16;
             this.buttonChangePassword.Text = "Change password";
             this.buttonChangePassword.UseVisualStyleBackColor = true;

@@ -68,6 +68,7 @@ namespace Dietpolix.Presenters
             //TO-DO Verification
             model.databasemanager.UpdateUserInfo(model.user.login, userprofilescreen.Sex, "1999-11-11", userprofilescreen.Weight, userprofilescreen.Height, userprofilescreen.Lifestyle, userprofilescreen.Aim);
             View_VEvent_OnVisibleChanged(arg1, arg2);
+            userprofilescreen.HideEditProfile();
         }
         private void View_VEvent_OnSubmitPasswordChange(object arg1, EventArgs arg2)
         {

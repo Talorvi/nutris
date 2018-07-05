@@ -27,7 +27,7 @@ namespace Dietpolix.Classes
         public string age { get; set; }
         public int weight { get; set; }
         public int height { get; set; }
-        public enum lifestyle { CouchPotato , Programmer, Balanced, Fit, Sportsman }
+        public enum lifestyle { CouchPotato, Programmer, Balanced, Fit, Sportsman }
         public enum aim { FatReduction, MuscleMass }
     }
 }

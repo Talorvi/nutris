@@ -81,6 +81,7 @@ namespace Dietpolix
 
         public event Action<object, EventArgs> VEvent_OnSelectedIndexChanged;
         public event Action<object, EventArgs> VEvent_OnLoad;
+        public event Action<object, EventArgs> VEvent_OnlinkLabelGotouserprofile;
 
         private void listBoxTodayDietProducts_SelectedIndexChanged(object sender, System.EventArgs e)
         {
@@ -95,6 +96,14 @@ namespace Dietpolix
             if (this.VEvent_OnLoad != null)
             {
                 VEvent_OnLoad(sender, e);
+            }
+        }
+
+        private void linkLabelGotouserprofile_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (this.VEvent_OnlinkLabelGotouserprofile != null)
+            {
+                VEvent_OnlinkLabelGotouserprofile(sender, e);
             }
         }
     }

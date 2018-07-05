@@ -7,6 +7,7 @@ namespace Dietpolix.Views
     {
         event Action<object, EventArgs> VEvent_OnSelectedIndexChanged;
         event Action<object, EventArgs> VEvent_OnLoad;
+        event Action<object, EventArgs> VEvent_OnlinkLabelGotouserprofile;
         //event EventHandler VEvent_OnRegisterLink;
 
         void DrawGeneralPieChart();
