@@ -1,5 +1,4 @@
 ﻿using Nutritionix;
-using System;
 using System.Collections.Generic;
 
 namespace Dietpolix.Classes.Managers

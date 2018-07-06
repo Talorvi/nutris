@@ -40,7 +40,7 @@ namespace Dietpolix.Classes.Managers
             conStrBuilder.Password = PASSWD;
             conStrBuilder.Database = DATABASE;
             conStrBuilder.Port = PORT;
-            Console.WriteLine(conStrBuilder.ConnectionString);
+            //Console.WriteLine(conStrBuilder.ConnectionString);
         }
         public bool TryToAddUser(string login, string password, string name, int sex)
         {
@@ -475,15 +475,6 @@ namespace Dietpolix.Classes.Managers
         {
             return record[0].ToString();
         } 
-        private static List<String> ReadUserInfo(IDataRecord record)
-        {
-            List<String> listofstrings = new List<string>();
-            for(int i=0; i < record.FieldCount; i++)
-            {
-                listofstrings.Add(record.GetValue(i).ToString());
-            }
-            return listofstrings;
-        }
         private static string GetMd5Hash(MD5 md5Hash, string input)
         {
             byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));

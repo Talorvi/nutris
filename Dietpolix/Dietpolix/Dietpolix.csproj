@@ -100,7 +100,6 @@
     <Compile Include="Presenters\RegisterScreenPresenter.cs" />
     <Compile Include="Presenters\SearchScreenPresenster.cs" />
     <Compile Include="Presenters\UserProfileScreenPresenter.cs" />
-    <Compile Include="Samples\Nutritionix\NutritionixSamples.cs" />
     <Compile Include="UserControls\CalendarScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
