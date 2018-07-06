@@ -9,10 +9,10 @@ namespace Dietpolix.Classes.Managers
 {
     public class DatabaseManager
     {
-        static string SERVER = "localhost";
-        static string USER = "root";
-        static string PASSWD = "";
-        static string DATABASE = "dietpolix_db";
+        static string SERVER = "sql7.freemysqlhosting.net";
+        static string USER = "sql7246414";
+        static string PASSWD = "CCH57yJxh3";
+        static string DATABASE = "sql7246414";
         static uint PORT = 3306;
 
         static string QUERY_ADD_USER = "INSERT INTO `users` (`login`, `password`, `name`, `sex`) VALUES ('{0}', '{1}', '{2}', NULL);";

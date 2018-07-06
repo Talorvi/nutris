@@ -29,7 +29,7 @@ namespace Dietpolix.Presenters
 
         private void View_VEvent_OnsearchToolStripMenuItem(object sender, EventArgs e)
         {
-            formdietpolix.SetUserControl(4);
+            formdietpolix.SetUserControl(5);
         }
 
         private void View_VEvent_OncalendarToolStripMenuItem(object sender, EventArgs e)
