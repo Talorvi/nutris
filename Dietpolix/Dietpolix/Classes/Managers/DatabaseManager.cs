@@ -9,10 +9,10 @@ namespace Dietpolix.Classes.Managers
 {
     public class DatabaseManager
     {
-        static string SERVER = "localhost";
-        static string USER = "root";
-        static string PASSWD = "";
-        static string DATABASE = "dietpolix_db";
+        static string SERVER = "sql7.freemysqlhosting.net";
+        static string USER = "sql7246414";
+        static string PASSWD = "CCH57yJxh3";
+        static string DATABASE = "sql7246414";
         static uint PORT = 3306;
 
         static string QUERY_ADD_USER = "INSERT INTO `users` (`login`, `password`, `name`, `sex`) VALUES ('{0}', '{1}', '{2}', NULL);";
@@ -40,7 +40,7 @@ namespace Dietpolix.Classes.Managers
             conStrBuilder.Password = PASSWD;
             conStrBuilder.Database = DATABASE;
             conStrBuilder.Port = PORT;
-            Console.WriteLine(conStrBuilder.ConnectionString);
+            //Console.WriteLine(conStrBuilder.ConnectionString);
         }
         public bool TryToAddUser(string login, string password, string name, int sex)
         {
@@ -475,15 +475,6 @@ namespace Dietpolix.Classes.Managers
         {
             return record[0].ToString();
         } 
-        private static List<String> ReadUserInfo(IDataRecord record)
-        {
-            List<String> listofstrings = new List<string>();
-            for(int i=0; i < record.FieldCount; i++)
-            {
-                listofstrings.Add(record.GetValue(i).ToString());
-            }
-            return listofstrings;
-        }
         private static string GetMd5Hash(MD5 md5Hash, string input)
         {
             byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
