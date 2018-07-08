@@ -46,7 +46,7 @@ namespace Dietpolix.Presenters
         }
         private void View_VEvent_OnLoad(object arg1, EventArgs arg2)
         {
-            View_VEvent_OnVisibleChanged(arg1, arg2);
+
         }
         private void View_VEvent_OnVisibleChanged(object arg1, EventArgs arg2)
         {

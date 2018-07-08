@@ -14,6 +14,5 @@ namespace Dietpolix.Views
 
         Control FormDietpolix { get; }
         FormDietpolix parent { get; }
-        string Name { set; }
     }
 }

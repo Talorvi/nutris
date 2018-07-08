@@ -32,14 +32,6 @@ namespace Dietpolix
             }
         }
 
-        public string Name
-        {
-            set
-            {
-                labelUserHello.Text = "Hello " + value + "!";
-            }
-        }
-
         public void DrawGeneralPieChart()
         {
             chartMyDream.Series.Clear();
@@ -89,7 +81,6 @@ namespace Dietpolix
 
         public void ShowInfo(double bmi, double bmr, double cpm)
         {
-            bmi = 20;
             labelUserBMI.Text = bmi.ToString();
             labelUserCaloriesDemand.Text = bmr.ToString() + " - " + cpm.ToString();
         }
@@ -97,19 +88,19 @@ namespace Dietpolix
         public event Action<object, EventArgs> VEvent_OnLoad;
         public event Action<object, EventArgs> VEvent_OnlinkLabelGotouserprofile;
 
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnLoad != null)
+            {
+                VEvent_OnLoad(sender, e);
+            }
+        }
+
         private void linkLabelGotouserprofile_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (this.VEvent_OnlinkLabelGotouserprofile != null)
             {
                 VEvent_OnlinkLabelGotouserprofile(sender, e);
-            }
-        }
-
-        private void MainScreen_VisibleChanged(object sender, EventArgs e)
-        {
-            if (this.VEvent_OnLoad != null)
-            {
-                VEvent_OnLoad(sender, e);
             }
         }
     }
