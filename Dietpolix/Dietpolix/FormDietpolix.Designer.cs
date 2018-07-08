@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDietpolix));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myaccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,7 +114,6 @@
             this.ClientSize = new System.Drawing.Size(818, 395);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.menuStrip);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormDietpolix";
             this.Text = "Dietpolix";

@@ -2,7 +2,6 @@
 using Dietpolix.Models;
 using Dietpolix.Views;
 
-
 namespace Dietpolix.Presenters
 {
     public class LoginScreenPresenter
@@ -29,8 +28,6 @@ namespace Dietpolix.Presenters
         {
             if (loginscreen.parent.IsTextboxFilled(loginscreen.GiveErrorProvider(), loginscreen.ListOfTextboxes()))
             {
-               // if (!model.databasemanager.CheckIfLoginExists(loginscreen.Login))
-                    //System.Windows.Forms.MessageBox.Show("Incorrect login");
                 bool successLogin = model.databasemanager.TryToLogIn(loginscreen.Login, loginscreen.Password);
                 if (successLogin == true)
                 {
@@ -41,8 +38,6 @@ namespace Dietpolix.Presenters
                 else
                 {
                     //TO-DO
-                    System.Windows.Forms.MessageBox.Show("Incorrect login or password");
-                    loginscreen.ClearAllTextboxes();
                 }
             }
         }

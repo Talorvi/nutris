@@ -29,12 +29,10 @@ namespace Dietpolix.Presenters
                     if (LoginExists == false)
                     {
                         bool CanAddUser = model.databasemanager.TryToAddUser(registerscreen.Login, registerscreen.Password1, registerscreen.Name, 0);
-                        if (CanAddUser == true)
+                        if(CanAddUser == true)
                             registerscreen.ShowInfo();
                     }
-                    else System.Windows.Forms.MessageBox.Show("Login is already taken");
                 }
-                else System.Windows.Forms.MessageBox.Show("Passwords don't match");
             }
                 
         }
