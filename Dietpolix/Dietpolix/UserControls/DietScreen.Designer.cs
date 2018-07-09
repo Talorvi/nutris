@@ -35,71 +35,77 @@
             this.listBoxCurrentDiet = new System.Windows.Forms.ListBox();
             this.textBoxDetails = new System.Windows.Forms.TextBox();
             this.labelproductsindiet = new System.Windows.Forms.Label();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonRemove = new System.Windows.Forms.Button();
-            this.labeldetermineportion = new System.Windows.Forms.Label();
-            this.numericUpDownPortionSize = new System.Windows.Forms.NumericUpDown();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.groupBoxAddToDiet = new System.Windows.Forms.GroupBox();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.numericUpDownPortionSize = new System.Windows.Forms.NumericUpDown();
+            this.labeldetermineportion = new System.Windows.Forms.Label();
+            this.buttonRemove = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.groupBoxAddToDiet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPortionSize)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAddToDiet
             // 
             this.buttonAddToDiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAddToDiet.Location = new System.Drawing.Point(20, 329);
-            this.buttonAddToDiet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddToDiet.Location = new System.Drawing.Point(27, 372);
+            this.buttonAddToDiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAddToDiet.Name = "buttonAddToDiet";
-            this.buttonAddToDiet.Size = new System.Drawing.Size(105, 24);
+            this.buttonAddToDiet.Size = new System.Drawing.Size(140, 30);
             this.buttonAddToDiet.TabIndex = 8;
             this.buttonAddToDiet.Text = "Add to diet";
             this.buttonAddToDiet.UseVisualStyleBackColor = true;
+            this.buttonAddToDiet.Click += new System.EventHandler(this.buttonAddToDiet_Click);
             // 
             // listBoxMatches
             // 
             this.listBoxMatches.FormattingEnabled = true;
+            this.listBoxMatches.ItemHeight = 16;
             this.listBoxMatches.Items.AddRange(new object[] {
             "<No matches found>"});
-            this.listBoxMatches.Location = new System.Drawing.Point(20, 68);
-            this.listBoxMatches.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxMatches.Location = new System.Drawing.Point(27, 65);
+            this.listBoxMatches.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBoxMatches.Name = "listBoxMatches";
-            this.listBoxMatches.Size = new System.Drawing.Size(224, 238);
+            this.listBoxMatches.Size = new System.Drawing.Size(297, 292);
             this.listBoxMatches.TabIndex = 7;
+            this.listBoxMatches.SelectedIndexChanged += new System.EventHandler(this.listBoxMatches_SelectedIndexChanged);
             // 
             // textBoxSearchProduct
             // 
             this.textBoxSearchProduct.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBoxSearchProduct.Location = new System.Drawing.Point(20, 17);
-            this.textBoxSearchProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSearchProduct.Location = new System.Drawing.Point(27, 21);
+            this.textBoxSearchProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSearchProduct.Name = "textBoxSearchProduct";
-            this.textBoxSearchProduct.Size = new System.Drawing.Size(224, 20);
+            this.textBoxSearchProduct.Size = new System.Drawing.Size(192, 22);
             this.textBoxSearchProduct.TabIndex = 6;
             this.textBoxSearchProduct.Text = "Search for your product";
             // 
             // monthCalendarDateOfDiet
             // 
-            this.monthCalendarDateOfDiet.Location = new System.Drawing.Point(635, 68);
-            this.monthCalendarDateOfDiet.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.monthCalendarDateOfDiet.Location = new System.Drawing.Point(828, 65);
             this.monthCalendarDateOfDiet.Name = "monthCalendarDateOfDiet";
             this.monthCalendarDateOfDiet.TabIndex = 9;
             // 
             // listBoxCurrentDiet
             // 
             this.listBoxCurrentDiet.FormattingEnabled = true;
+            this.listBoxCurrentDiet.ItemHeight = 16;
             this.listBoxCurrentDiet.Items.AddRange(new object[] {
             "<No products in diet>"});
-            this.listBoxCurrentDiet.Location = new System.Drawing.Point(466, 68);
-            this.listBoxCurrentDiet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxCurrentDiet.Location = new System.Drawing.Point(597, 65);
+            this.listBoxCurrentDiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBoxCurrentDiet.Name = "listBoxCurrentDiet";
-            this.listBoxCurrentDiet.Size = new System.Drawing.Size(134, 238);
+            this.listBoxCurrentDiet.Size = new System.Drawing.Size(219, 292);
             this.listBoxCurrentDiet.TabIndex = 10;
             // 
             // textBoxDetails
             // 
-            this.textBoxDetails.Location = new System.Drawing.Point(256, 68);
-            this.textBoxDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDetails.Location = new System.Drawing.Point(330, 65);
+            this.textBoxDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDetails.Multiline = true;
             this.textBoxDetails.Name = "textBoxDetails";
-            this.textBoxDetails.Size = new System.Drawing.Size(197, 238);
+            this.textBoxDetails.Size = new System.Drawing.Size(261, 292);
             this.textBoxDetails.TabIndex = 11;
             this.textBoxDetails.Text = "No details";
             // 
@@ -107,50 +113,52 @@
             // 
             this.labelproductsindiet.AutoSize = true;
             this.labelproductsindiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelproductsindiet.Location = new System.Drawing.Point(464, 51);
-            this.labelproductsindiet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelproductsindiet.Location = new System.Drawing.Point(619, 44);
             this.labelproductsindiet.Name = "labelproductsindiet";
-            this.labelproductsindiet.Size = new System.Drawing.Size(135, 15);
+            this.labelproductsindiet.Size = new System.Drawing.Size(164, 18);
             this.labelproductsindiet.TabIndex = 12;
             this.labelproductsindiet.Text = "Products in current diet:";
             // 
-            // buttonAdd
+            // buttonSearch
             // 
-            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAdd.Location = new System.Drawing.Point(466, 329);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(56, 24);
-            this.buttonAdd.TabIndex = 13;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSearch.Location = new System.Drawing.Point(225, 16);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(99, 30);
+            this.buttonSearch.TabIndex = 18;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // buttonRemove
+            // groupBoxAddToDiet
             // 
-            this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRemove.Location = new System.Drawing.Point(543, 329);
-            this.buttonRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(56, 24);
-            this.buttonRemove.TabIndex = 14;
-            this.buttonRemove.Text = "Remove";
-            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.groupBoxAddToDiet.Controls.Add(this.buttonCancel);
+            this.groupBoxAddToDiet.Controls.Add(this.numericUpDownPortionSize);
+            this.groupBoxAddToDiet.Controls.Add(this.labeldetermineportion);
+            this.groupBoxAddToDiet.Controls.Add(this.buttonAdd);
+            this.groupBoxAddToDiet.Location = new System.Drawing.Point(210, 362);
+            this.groupBoxAddToDiet.Name = "groupBoxAddToDiet";
+            this.groupBoxAddToDiet.Size = new System.Drawing.Size(588, 100);
+            this.groupBoxAddToDiet.TabIndex = 19;
+            this.groupBoxAddToDiet.TabStop = false;
+            this.groupBoxAddToDiet.Visible = false;
             // 
-            // labeldetermineportion
+            // buttonCancel
             // 
-            this.labeldetermineportion.AutoSize = true;
-            this.labeldetermineportion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labeldetermineportion.Location = new System.Drawing.Point(179, 333);
-            this.labeldetermineportion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labeldetermineportion.Name = "labeldetermineportion";
-            this.labeldetermineportion.Size = new System.Drawing.Size(150, 15);
-            this.labeldetermineportion.TabIndex = 15;
-            this.labeldetermineportion.Text = "Determine portion size: [g]";
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCancel.Location = new System.Drawing.Point(217, 54);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(100, 30);
+            this.buttonCancel.TabIndex = 22;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // numericUpDownPortionSize
             // 
-            this.numericUpDownPortionSize.Location = new System.Drawing.Point(328, 333);
-            this.numericUpDownPortionSize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDownPortionSize.Location = new System.Drawing.Point(212, 17);
+            this.numericUpDownPortionSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDownPortionSize.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -162,44 +170,68 @@
             0,
             0});
             this.numericUpDownPortionSize.Name = "numericUpDownPortionSize";
-            this.numericUpDownPortionSize.Size = new System.Drawing.Size(79, 20);
-            this.numericUpDownPortionSize.TabIndex = 16;
+            this.numericUpDownPortionSize.Size = new System.Drawing.Size(105, 22);
+            this.numericUpDownPortionSize.TabIndex = 21;
             this.numericUpDownPortionSize.Value = new decimal(new int[] {
             100,
             0,
             0,
             0});
             // 
-            // buttonCancel
+            // labeldetermineportion
             // 
-            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonCancel.Location = new System.Drawing.Point(332, 364);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 24);
-            this.buttonCancel.TabIndex = 17;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.labeldetermineportion.AutoSize = true;
+            this.labeldetermineportion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labeldetermineportion.Location = new System.Drawing.Point(14, 17);
+            this.labeldetermineportion.Name = "labeldetermineportion";
+            this.labeldetermineportion.Size = new System.Drawing.Size(181, 18);
+            this.labeldetermineportion.TabIndex = 20;
+            this.labeldetermineportion.Text = "Determine portion size: [g]";
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRemove.Location = new System.Drawing.Point(828, 327);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(89, 30);
+            this.buttonRemove.TabIndex = 19;
+            this.buttonRemove.Text = "Remove";
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAdd.Location = new System.Drawing.Point(411, 10);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 30);
+            this.buttonAdd.TabIndex = 18;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // DietScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.numericUpDownPortionSize);
-            this.Controls.Add(this.labeldetermineportion);
-            this.Controls.Add(this.buttonRemove);
-            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.groupBoxAddToDiet);
+            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.labelproductsindiet);
+            this.Controls.Add(this.buttonRemove);
             this.Controls.Add(this.textBoxDetails);
             this.Controls.Add(this.listBoxCurrentDiet);
             this.Controls.Add(this.monthCalendarDateOfDiet);
             this.Controls.Add(this.buttonAddToDiet);
             this.Controls.Add(this.listBoxMatches);
             this.Controls.Add(this.textBoxSearchProduct);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DietScreen";
-            this.Size = new System.Drawing.Size(910, 426);
+            this.Size = new System.Drawing.Size(1213, 524);
+            this.Load += new System.EventHandler(this.DietScreen_Load);
+            this.groupBoxAddToDiet.ResumeLayout(false);
+            this.groupBoxAddToDiet.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPortionSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -214,10 +246,12 @@
         private System.Windows.Forms.ListBox listBoxCurrentDiet;
         private System.Windows.Forms.TextBox textBoxDetails;
         private System.Windows.Forms.Label labelproductsindiet;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonRemove;
-        private System.Windows.Forms.Label labeldetermineportion;
-        private System.Windows.Forms.NumericUpDown numericUpDownPortionSize;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.GroupBox groupBoxAddToDiet;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.NumericUpDown numericUpDownPortionSize;
+        private System.Windows.Forms.Label labeldetermineportion;
+        private System.Windows.Forms.Button buttonRemove;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
