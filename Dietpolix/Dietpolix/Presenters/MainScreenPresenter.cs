@@ -34,10 +34,7 @@ namespace Dietpolix.Presenters
         private void View_VEvent_OnLoad(object arg1, EventArgs arg2)
         {
             mainscreen.DrawGeneralPieChart();
-            if (model.CountBMI(model.user.weight, model.user.height) == 0)
-            {
-                return;
-            }
+
             List<String> userinfo = model.databasemanager.GetUserInfo(model.user.login);
             if (userinfo.Count == 8)
             {
@@ -50,7 +47,13 @@ namespace Dietpolix.Presenters
                 Lifestyle = model.user._lifestyle.ToString();
                 Aim = model.user._aim.ToString();
             }
-            double bmr = model.CountBMR(Int32.Parse(Weight), Int32.Parse(Height), Int32.Parse(Age), Sex);
+
+            double bmi = model.CountBMI(model.user.weight, model.user.height);
+            if (bmi == 0)
+            {
+                return;
+            }
+            double bmr = model.CountBMR(model.user.weight, model.user.height, model.CalculateAge(model.user.age), model.user._sex.ToString());
             mainscreen.ShowInfo(model.CountBMI(Int32.Parse(Weight), Int32.Parse(Height)),
                 bmr, model.CountCPM(bmr, Lifestyle, Aim));
         }

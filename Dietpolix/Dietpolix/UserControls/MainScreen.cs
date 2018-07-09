@@ -104,5 +104,13 @@ namespace Dietpolix
                 VEvent_OnlinkLabelGotouserprofile(sender, e);
             }
         }
+
+        private void MainScreen_Enter(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnLoad != null)
+            {
+                VEvent_OnLoad(sender, e);
+            }
+        }
     }
 }

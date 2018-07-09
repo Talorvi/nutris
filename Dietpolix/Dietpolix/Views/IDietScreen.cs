@@ -22,6 +22,7 @@ namespace Dietpolix.Views
         void RemoveDietProduct();
         void ShowTodayDiet(string[] products);
 
+        string GetDate { get; }
         string ProductName { get; }
         string[] ListOfProducts { set; }
         int SelectedProductID { get; }

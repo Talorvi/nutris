@@ -192,6 +192,7 @@
             this.Name = "MainScreen";
             this.Size = new System.Drawing.Size(1093, 449);
             this.Load += new System.EventHandler(this.MainScreen_Load);
+            this.Enter += new System.EventHandler(this.MainScreen_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.chartMyDream)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBoxUserData.ResumeLayout(false);

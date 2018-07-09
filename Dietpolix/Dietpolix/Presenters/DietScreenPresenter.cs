@@ -34,7 +34,7 @@ namespace Dietpolix.Presenters
                 model.user = new Classes.User(userinfo[0], userinfo[1], userinfo[2], userinfo[3], Int32.Parse(userinfo[4]), Int32.Parse(userinfo[5]), userinfo[6], userinfo[7]);
                 login = model.user.login;
             }
-            List<Classes.Diet> dietlist = model.databasemanager.GetConsumption(login, DateTime.Today.ToString(), DateTime.Today.ToString());
+            List<Classes.Diet> dietlist = model.databasemanager.GetConsumption(login, dietscreen.GetDate, dietscreen.GetDate);
             List<string> products = new List<string>();
 
             foreach (var product in dietlist )

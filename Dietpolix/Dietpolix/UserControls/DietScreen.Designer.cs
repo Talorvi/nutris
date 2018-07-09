@@ -86,6 +86,7 @@
             this.monthCalendarDateOfDiet.Location = new System.Drawing.Point(828, 65);
             this.monthCalendarDateOfDiet.Name = "monthCalendarDateOfDiet";
             this.monthCalendarDateOfDiet.TabIndex = 9;
+            this.monthCalendarDateOfDiet.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarDateOfDiet_DateSelected);
             // 
             // listBoxCurrentDiet
             // 

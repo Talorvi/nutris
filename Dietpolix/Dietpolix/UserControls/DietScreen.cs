@@ -42,6 +42,14 @@ namespace Dietpolix
             }
         }
 
+        public string GetDate
+        {
+            get
+            {
+                return monthCalendarDateOfDiet.SelectionEnd.ToString("yyyy-MM-dd");
+            }
+        }
+
         new public string ProductName
         {
             get
@@ -105,7 +113,16 @@ namespace Dietpolix
 
         public void ShowTodayDiet(string[] products)
         {
-            listBoxCurrentDiet.Items.AddRange(products);
+            listBoxCurrentDiet.Items.Clear();
+            if (products.Length != 0)
+            {
+                listBoxCurrentDiet.Items.AddRange(products);
+            }
+            else
+            {
+                listBoxCurrentDiet.Items.Add("<No products in diet>");
+            }
+            
         }
 
         public event Action<object, EventArgs> VEvent_OnbuttonSearch;
@@ -165,6 +182,14 @@ namespace Dietpolix
         }
 
         private void DietScreen_Load(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnLoad != null)
+            {
+                VEvent_OnLoad(sender, e);
+            }
+        }
+
+        private void monthCalendarDateOfDiet_DateSelected(object sender, DateRangeEventArgs e)
         {
             if (this.VEvent_OnLoad != null)
             {

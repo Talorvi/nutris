@@ -2,6 +2,7 @@
 using Dietpolix.Classes;
 using System.Collections.Generic;
 using System.Text;
+using System;
 
 namespace Dietpolix.Models
 {
@@ -27,12 +28,23 @@ namespace Dietpolix.Models
             return sb.ToString();
         }
 
+        public int CalculateAge(string birth)
+        {
+            DateTime dateOfBirth = DateTime.Parse(birth);
+            var today = DateTime.Today;
+
+            var a = (today.Year * 100 + today.Month) * 100 + today.Day;
+            var b = (dateOfBirth.Year * 100 + dateOfBirth.Month) * 100 + dateOfBirth.Day;
+
+            return (a - b) / 10000;
+        }
+
         public double CountBMI(int weight, int height)
         {
-            double BMI = 0;
             if ((weight!=0)&&(height!=0))
             {
-                return BMI = weight / (height * height);
+                double BMI = (Double)weight / ((Double)height/100 * (Double)height/100);
+                return Math.Round(BMI,1);
             }
             return 0;
         }
@@ -45,9 +57,16 @@ namespace Dietpolix.Models
             {
                 double allBmr = (9.99 * weight) + (6.25 * height) - (4.92 * age);
                 if (sex == "Male")
-                    return BMR = allBmr + 5;
+                {
+                    BMR = allBmr + 5;
+                    return Math.Round(BMR, 0);
+                }
+
                 if (sex == "Female")
-                    return BMR = allBmr - 161;
+                {
+                    BMR = allBmr - 161;
+                    return Math.Round(BMR, 0);
+                }
             }
             return 0;
         }
@@ -69,9 +88,15 @@ namespace Dietpolix.Models
                     case "Sportsman": CPM = BMR * 2.2; break;
                 }
                 if (aim == "FatReduction")
-                    return CPM = CPM - 200;
+                {
+                    CPM = CPM - 200;
+                    return Math.Round(CPM,0);
+                }
                 if (aim == "MuscleMass")
-                    return CPM = CPM + 300;
+                {
+                    CPM = CPM + 300;
+                    return Math.Round(CPM, 0);
+                }
             }
             return 0;
         }
