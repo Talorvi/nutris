@@ -39,7 +39,7 @@ namespace Dietpolix.Presenters
 
             foreach (var product in dietlist )
             {
-                products.Add(product.product_name + " " + product.quantity.ToString());
+                products.Add(product.product_name + " " + product.quantity.ToString() + "g");
             }
             dietscreen.ShowTodayDiet(products.ToArray());
         }

@@ -13,7 +13,7 @@ namespace Dietpolix
         {
             InitializeComponent();
             this.parent = parent;
-            //DrawPieChart(2, 5, 3, 4, 1);
+            //DrawMyPieChart(2, 5, 3, 4, 1);
         }
 
         public Control FormDietpolix
@@ -30,6 +30,20 @@ namespace Dietpolix
             {
                 return parent;
             }
+        }
+
+        public void ShowDiet(string[] products)
+        {
+            listBoxTodayDietProducts.Items.Clear();
+            if (products.Length != 0)
+            {
+                listBoxTodayDietProducts.Items.AddRange(products);
+            }
+            else
+            {
+                listBoxTodayDietProducts.Items.Add("<No products in diet>");
+            }
+
         }
 
         public void DrawGeneralPieChart()
@@ -51,32 +65,49 @@ namespace Dietpolix
             chartMyDream.Series[seriesname].Points.AddXY("Fat", 20);
         }
 
-        private void DrawPieChart(int value1, int value2, int value3, int value4, int value5)
+        public void DrawMyPieChart(int proteins, int carbohydrates, int fat)
         {
-            //reset your chart series and legends
             chartMyDream.Series.Clear();
             chartMyDream.Legends.Clear();
-
-            //Add a new Legend(if needed) and do some formating
-            chartMyDream.Legends.Add("MyLegend");
+            chartMyDream.Legends.Add("Nutriens");
             chartMyDream.Legends[0].LegendStyle = LegendStyle.Table;
             chartMyDream.Legends[0].Docking = Docking.Bottom;
             chartMyDream.Legends[0].Alignment = StringAlignment.Center;
-            chartMyDream.Legends[0].Title = "MyTitle";
+            chartMyDream.Legends[0].Title = "Your current nutrients amount";
             chartMyDream.Legends[0].BorderColor = Color.Black;
-
-            //Add a new chart-series
             string seriesname = "MySeriesName";
             chartMyDream.Series.Add(seriesname);
-            //set the chart-type to "Pie"
             chartMyDream.Series[seriesname].ChartType = SeriesChartType.Pie;
 
-            //Add some datapoints so the series. in this case you can pass the values to this method
-            chartMyDream.Series[seriesname].Points.AddXY("MyPointName", value1);
-            chartMyDream.Series[seriesname].Points.AddXY("MyPointName1", value2);
-            chartMyDream.Series[seriesname].Points.AddXY("MyPointName2", value3);
-            chartMyDream.Series[seriesname].Points.AddXY("MyPointName3", value4);
-            chartMyDream.Series[seriesname].Points.AddXY("MyPointName4", value5);
+            chartMyDream.Series[seriesname].Points.AddXY("Proteins", proteins);
+            chartMyDream.Series[seriesname].Points.AddXY("Carbohydrates", carbohydrates);
+            chartMyDream.Series[seriesname].Points.AddXY("Fat", fat);
+
+
+            ////reset your chart series and legends
+            //chartMyDream.Series.Clear();
+            //chartMyDream.Legends.Clear();
+
+            ////Add a new Legend(if needed) and do some formating
+            //chartMyDream.Legends.Add("MyLegend");
+            //chartMyDream.Legends[0].LegendStyle = LegendStyle.Table;
+            //chartMyDream.Legends[0].Docking = Docking.Bottom;
+            //chartMyDream.Legends[0].Alignment = StringAlignment.Center;
+            //chartMyDream.Legends[0].Title = "MyTitle";
+            //chartMyDream.Legends[0].BorderColor = Color.Black;
+
+            ////Add a new chart-series
+            //string seriesname = "MySeriesName";
+            //chartMyDream.Series.Add(seriesname);
+            ////set the chart-type to "Pie"
+            //chartMyDream.Series[seriesname].ChartType = SeriesChartType.Pie;
+
+            ////Add some datapoints so the series. in this case you can pass the values to this method
+            //chartMyDream.Series[seriesname].Points.AddXY("MyPointName", value1);
+            //chartMyDream.Series[seriesname].Points.AddXY("MyPointName1", value2);
+            //chartMyDream.Series[seriesname].Points.AddXY("MyPointName2", value3);
+            //chartMyDream.Series[seriesname].Points.AddXY("MyPointName3", value4);
+            //chartMyDream.Series[seriesname].Points.AddXY("MyPointName4", value5);
         }
 
         public void ShowInfo(double bmi, double bmr, double cpm)
