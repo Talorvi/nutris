@@ -1,6 +1,7 @@
 ﻿using System;
 using Dietpolix.Models;
 using Dietpolix.Views;
+using System.Collections.Generic;
 
 namespace Dietpolix.Presenters
 {
@@ -23,20 +24,35 @@ namespace Dietpolix.Presenters
         {
             mainscreen.parent.SetUserControl(6);
         }
-
+        string Login = "";
+        string Sex = "";
+        string Age = "";
+        string Weight = "";
+        string Height = "";
+        string Lifestyle = "";
+        string Aim = "";
         private void View_VEvent_OnLoad(object arg1, EventArgs arg2)
         {
-            //TO-DO please, don't crash :(
+            mainscreen.DrawGeneralPieChart();
             if (model.CountBMI(model.user.weight, model.user.height) == 0)
             {
-                mainscreen.DrawGeneralPieChart();
                 return;
             }
-            int age= Int32.Parse(model.user.age);
-            double bmr = model.CountBMR(model.user.weight, model.user.height, age, model.user._sex.ToString());
-            mainscreen.ShowInfo(model.CountBMI(model.user.weight, model.user.height),
-                model.CountBMR(model.user.weight, model.user.height, age, model.user._sex.ToString()),
-                model.CountCPM(bmr, model.user._lifestyle.ToString(), model.user._aim.ToString()));
+            List<String> userinfo = model.databasemanager.GetUserInfo(model.user.login);
+            if (userinfo.Count == 8)
+            {
+                model.user = new Classes.User(userinfo[0], userinfo[1], userinfo[2], userinfo[3], Int32.Parse(userinfo[4]), Int32.Parse(userinfo[5]), userinfo[6], userinfo[7]);
+                Login = model.user.login;
+                Sex = model.user._sex.ToString();
+                Age = model.user.age.ToString();
+                Weight = model.user.weight.ToString();
+                Height = model.user.height.ToString();
+                Lifestyle = model.user._lifestyle.ToString();
+                Aim = model.user._aim.ToString();
+            }
+            double bmr = model.CountBMR(Int32.Parse(Weight), Int32.Parse(Height), Int32.Parse(Age), Sex);
+            mainscreen.ShowInfo(model.CountBMI(Int32.Parse(Weight), Int32.Parse(Height)),
+                bmr, model.CountCPM(bmr, Lifestyle, Aim));
         }
     }
 }
