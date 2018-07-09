@@ -5,6 +5,10 @@ namespace Dietpolix.Views
 {
     public interface ICalendarScreen
     {
+        event Action<object, EventArgs> VEvent_OnmonthCalendarDiet_DateSelected;
+
+        string GetDate { get; }
+        void ShowDiet(string[] products);
 
         Control FormDietpolix { get; }
         FormDietpolix parent { get; }

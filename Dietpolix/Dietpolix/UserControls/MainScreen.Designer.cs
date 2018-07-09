@@ -46,6 +46,8 @@
             this.labelUserBMI = new System.Windows.Forms.Label();
             this.labelbmi = new System.Windows.Forms.Label();
             this.linkLabelGotouserprofile = new System.Windows.Forms.LinkLabel();
+            this.labelUserHello = new System.Windows.Forms.Label();
+            this.labeltodaydiet = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartMyDream)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBoxUserData.SuspendLayout();
@@ -55,10 +57,10 @@
             // 
             this.listBoxTodayDietProducts.FormattingEnabled = true;
             this.listBoxTodayDietProducts.ItemHeight = 16;
-            this.listBoxTodayDietProducts.Location = new System.Drawing.Point(12, 18);
+            this.listBoxTodayDietProducts.Location = new System.Drawing.Point(12, 66);
             this.listBoxTodayDietProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBoxTodayDietProducts.Name = "listBoxTodayDietProducts";
-            this.listBoxTodayDietProducts.Size = new System.Drawing.Size(306, 356);
+            this.listBoxTodayDietProducts.Size = new System.Drawing.Size(306, 308);
             this.listBoxTodayDietProducts.TabIndex = 0;
             // 
             // buttonEditTodayDiet
@@ -178,10 +180,31 @@
             this.linkLabelGotouserprofile.Text = "Edit your profile info";
             this.linkLabelGotouserprofile.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGotouserprofile_LinkClicked);
             // 
+            // labelUserHello
+            // 
+            this.labelUserHello.AutoSize = true;
+            this.labelUserHello.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUserHello.Location = new System.Drawing.Point(8, 18);
+            this.labelUserHello.Name = "labelUserHello";
+            this.labelUserHello.Size = new System.Drawing.Size(53, 20);
+            this.labelUserHello.TabIndex = 10;
+            this.labelUserHello.Text = "label1";
+            // 
+            // labeltodaydiet
+            // 
+            this.labeltodaydiet.AutoSize = true;
+            this.labeltodaydiet.Location = new System.Drawing.Point(9, 47);
+            this.labeltodaydiet.Name = "labeltodaydiet";
+            this.labeltodaydiet.Size = new System.Drawing.Size(129, 17);
+            this.labeltodaydiet.TabIndex = 11;
+            this.labeltodaydiet.Text = "Your diet for today:";
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labeltodaydiet);
+            this.Controls.Add(this.labelUserHello);
             this.Controls.Add(this.linkLabelGotouserprofile);
             this.Controls.Add(this.groupBoxUserData);
             this.Controls.Add(this.chart1);
@@ -215,5 +238,7 @@
         private System.Windows.Forms.Label labelUserCaloriesDemand;
         private System.Windows.Forms.Label labelUserBMI;
         private System.Windows.Forms.LinkLabel linkLabelGotouserprofile;
+        private System.Windows.Forms.Label labelUserHello;
+        private System.Windows.Forms.Label labeltodaydiet;
     }
 }
