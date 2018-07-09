@@ -103,10 +103,10 @@ namespace Dietpolix
                 listBoxCurrentDiet.Items.Add("<No products in diet>");
         }
 
-        //public void ShowTodayDiet(List<string> products)
-        //{
-        //    listBoxCurrentDiet.Items.AddRange(products.ToArray());
-        //}
+        public void ShowTodayDiet(string[] products)
+        {
+            listBoxCurrentDiet.Items.AddRange(products);
+        }
 
         public event Action<object, EventArgs> VEvent_OnbuttonSearch;
         public event Action<object, EventArgs> VEvent_OnProductSelectedIndexChanged;

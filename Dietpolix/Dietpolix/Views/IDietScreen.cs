@@ -20,7 +20,7 @@ namespace Dietpolix.Views
         string GetPortionSize();
         void ShowAddedProducts();
         void RemoveDietProduct();
-        //void ShowTodayDiet(List<string> products);
+        void ShowTodayDiet(string[] products);
 
         string ProductName { get; }
         string[] ListOfProducts { set; }

@@ -96,6 +96,7 @@ namespace Dietpolix
             }
         }
 
+
         private void linkLabelGotouserprofile_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (this.VEvent_OnlinkLabelGotouserprofile != null)
