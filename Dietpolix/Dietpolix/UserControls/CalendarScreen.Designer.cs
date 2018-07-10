@@ -31,7 +31,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.monthCalendarDiet = new System.Windows.Forms.MonthCalendar();
             this.listBoxUserDayDiet = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.labelyourdiet = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -42,6 +43,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
             this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.Visible = false;
             // 
             // monthCalendarDiet
             // 
@@ -59,27 +61,38 @@
             // 
             this.listBoxUserDayDiet.FormattingEnabled = true;
             this.listBoxUserDayDiet.ItemHeight = 16;
-            this.listBoxUserDayDiet.Location = new System.Drawing.Point(508, 25);
+            this.listBoxUserDayDiet.Location = new System.Drawing.Point(452, 64);
             this.listBoxUserDayDiet.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxUserDayDiet.Name = "listBoxUserDayDiet";
-            this.listBoxUserDayDiet.Size = new System.Drawing.Size(231, 292);
+            this.listBoxUserDayDiet.Size = new System.Drawing.Size(287, 276);
             this.listBoxUserDayDiet.TabIndex = 2;
             // 
-            // button1
+            // buttonEdit
             // 
-            this.button1.Location = new System.Drawing.Point(639, 326);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonEdit.Location = new System.Drawing.Point(639, 348);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(100, 28);
+            this.buttonEdit.TabIndex = 3;
+            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // labelyourdiet
+            // 
+            this.labelyourdiet.AutoSize = true;
+            this.labelyourdiet.Location = new System.Drawing.Point(449, 43);
+            this.labelyourdiet.Name = "labelyourdiet";
+            this.labelyourdiet.Size = new System.Drawing.Size(166, 17);
+            this.labelyourdiet.TabIndex = 4;
+            this.labelyourdiet.Text = "Your diet for current day:";
             // 
             // CalendarScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelyourdiet);
+            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.listBoxUserDayDiet);
             this.Controls.Add(this.monthCalendarDiet);
             this.Controls.Add(this.dateTimePicker1);
@@ -87,6 +100,7 @@
             this.Name = "CalendarScreen";
             this.Size = new System.Drawing.Size(756, 495);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,6 +109,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.MonthCalendar monthCalendarDiet;
         private System.Windows.Forms.ListBox listBoxUserDayDiet;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Label labelyourdiet;
     }
 }

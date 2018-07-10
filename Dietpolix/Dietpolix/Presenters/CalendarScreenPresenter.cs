@@ -16,6 +16,12 @@ namespace Dietpolix.Presenters
             this.calendarscreen = calendarscreen;
 
             calendarscreen.VEvent_OnmonthCalendarDiet_DateSelected += View_VEvent_OnmonthCalendarDiet_DateSelected;
+            calendarscreen.VEvent_OnbuttonEdit += View_VEvent_OnbuttonEdit;
+        }
+
+        private void View_VEvent_OnbuttonEdit(object arg1, EventArgs arg2)
+        {
+            calendarscreen.parent.SetUserControl(1);
         }
 
         private void View_VEvent_OnmonthCalendarDiet_DateSelected(object arg1, EventArgs arg2)

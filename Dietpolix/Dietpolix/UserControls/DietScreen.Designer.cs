@@ -40,8 +40,8 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.numericUpDownPortionSize = new System.Windows.Forms.NumericUpDown();
             this.labeldetermineportion = new System.Windows.Forms.Label();
-            this.buttonRemove = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonRemove = new System.Windows.Forms.Button();
             this.groupBoxAddToDiet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPortionSize)).BeginInit();
             this.SuspendLayout();
@@ -114,7 +114,7 @@
             // 
             this.labelproductsindiet.AutoSize = true;
             this.labelproductsindiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelproductsindiet.Location = new System.Drawing.Point(619, 44);
+            this.labelproductsindiet.Location = new System.Drawing.Point(594, 45);
             this.labelproductsindiet.Name = "labelproductsindiet";
             this.labelproductsindiet.Size = new System.Drawing.Size(164, 18);
             this.labelproductsindiet.TabIndex = 12;
@@ -189,18 +189,6 @@
             this.labeldetermineportion.TabIndex = 20;
             this.labeldetermineportion.Text = "Determine portion size: [g]";
             // 
-            // buttonRemove
-            // 
-            this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRemove.Location = new System.Drawing.Point(828, 327);
-            this.buttonRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(89, 30);
-            this.buttonRemove.TabIndex = 19;
-            this.buttonRemove.Text = "Remove";
-            this.buttonRemove.UseVisualStyleBackColor = true;
-            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
-            // 
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -212,6 +200,18 @@
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRemove.Location = new System.Drawing.Point(828, 327);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(89, 30);
+            this.buttonRemove.TabIndex = 19;
+            this.buttonRemove.Text = "Remove";
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // DietScreen
             // 

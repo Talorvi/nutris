@@ -24,7 +24,7 @@ namespace Dietpolix.Presenters
         {
             mainscreen.parent.SetUserControl(6);
         }
-        string Login = "";
+
         string Sex = "";
         string Age = "";
         string Weight = "";
@@ -51,6 +51,7 @@ namespace Dietpolix.Presenters
                 Lifestyle = model.user._lifestyle.ToString();
                 Aim = model.user._aim.ToString();
             }
+            mainscreen.ShowHello(name);
             List<Classes.Diet> dietlist = model.databasemanager.GetConsumption(login, DateTime.Today.ToString(), DateTime.Today.ToString());
             List<string> products = new List<string>();
 
@@ -68,6 +69,21 @@ namespace Dietpolix.Presenters
             double bmr = model.CountBMR(model.user.weight, model.user.height, model.CalculateAge(model.user.age), model.user._sex.ToString());
             mainscreen.ShowInfo(model.CountBMI(Int32.Parse(Weight), Int32.Parse(Height)),
                 bmr, model.CountCPM(bmr, Lifestyle, Aim));
+
+            double carbohydrates = 0;
+            double fat = 0;
+            double protein = 0;
+            if(dietlist!=null)
+            {
+                mainscreen.ShowMyPieChart();
+                foreach (var product in dietlist)
+                {
+                    carbohydrates = carbohydrates + product.carbohydrates;
+                    fat = fat + product.fat;
+                    protein = protein + product.protein;
+                }
+                mainscreen.DrawMyPieChart(Math.Round(protein, 0), Math.Round(carbohydrates, 0), Math.Round(fat, 0));
+            }
         }
     }
 }

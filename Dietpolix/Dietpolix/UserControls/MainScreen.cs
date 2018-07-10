@@ -65,23 +65,23 @@ namespace Dietpolix
             chartMyDream.Series[seriesname].Points.AddXY("Fat", 20);
         }
 
-        public void DrawMyPieChart(int proteins, int carbohydrates, int fat)
+        public void DrawMyPieChart(double proteins, double carbohydrates, double fat)
         {
-            chartMyDream.Series.Clear();
-            chartMyDream.Legends.Clear();
-            chartMyDream.Legends.Add("Nutriens");
-            chartMyDream.Legends[0].LegendStyle = LegendStyle.Table;
-            chartMyDream.Legends[0].Docking = Docking.Bottom;
-            chartMyDream.Legends[0].Alignment = StringAlignment.Center;
-            chartMyDream.Legends[0].Title = "Your current nutrients amount";
-            chartMyDream.Legends[0].BorderColor = Color.Black;
+            chartMyNutriens.Series.Clear();
+            chartMyNutriens.Legends.Clear();
+            chartMyNutriens.Legends.Add("Nutriens");
+            chartMyNutriens.Legends[0].LegendStyle = LegendStyle.Table;
+            chartMyNutriens.Legends[0].Docking = Docking.Bottom;
+            chartMyNutriens.Legends[0].Alignment = StringAlignment.Center;
+            chartMyNutriens.Legends[0].Title = "Your current nutrients amount";
+            chartMyNutriens.Legends[0].BorderColor = Color.Black;
             string seriesname = "MySeriesName";
-            chartMyDream.Series.Add(seriesname);
-            chartMyDream.Series[seriesname].ChartType = SeriesChartType.Pie;
+            chartMyNutriens.Series.Add(seriesname);
+            chartMyNutriens.Series[seriesname].ChartType = SeriesChartType.Pie;
 
-            chartMyDream.Series[seriesname].Points.AddXY("Proteins", proteins);
-            chartMyDream.Series[seriesname].Points.AddXY("Carbohydrates", carbohydrates);
-            chartMyDream.Series[seriesname].Points.AddXY("Fat", fat);
+            chartMyNutriens.Series[seriesname].Points.AddXY("Proteins", proteins);
+            chartMyNutriens.Series[seriesname].Points.AddXY("Carbohydrates", carbohydrates);
+            chartMyNutriens.Series[seriesname].Points.AddXY("Fat", fat);
 
 
             ////reset your chart series and legends
@@ -114,6 +114,28 @@ namespace Dietpolix
         {
             labelUserBMI.Text = bmi.ToString();
             labelUserCaloriesDemand.Text = bmr.ToString() + " - " + cpm.ToString();
+        }
+
+        public void ShowHello(string username)
+        {
+            labelUserHello.Text = "Hello " + username + "!"; 
+        }
+
+        public DateTime WhichDate (int option) // 0 -> this day, 1 -> this week, 2 -> month
+        {
+            switch (option)
+            {
+                case 0: return DateTime.Today;
+                case 1: return DateTime.Today.AddDays(-7.0);
+                case 2: return DateTime.Today.AddDays(-30.0);
+            }
+            return DateTime.Today;
+        }
+
+        public void ShowMyPieChart()
+        {
+            linkLabelGotouserprofile.Visible = false;
+            chartMyNutriens.Visible = true;
         }
 
         public event Action<object, EventArgs> VEvent_OnLoad;

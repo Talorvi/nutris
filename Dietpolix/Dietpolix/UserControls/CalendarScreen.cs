@@ -53,12 +53,21 @@ namespace Dietpolix
         }
 
         public event Action<object, EventArgs> VEvent_OnmonthCalendarDiet_DateSelected;
+        public event Action<object, EventArgs> VEvent_OnbuttonEdit;
 
         private void monthCalendarDiet_DateSelected(object sender, DateRangeEventArgs e)
         {
             if (this.VEvent_OnmonthCalendarDiet_DateSelected != null)
             {
                 VEvent_OnmonthCalendarDiet_DateSelected(sender, e);
+            }
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnbuttonEdit != null)
+            {
+                VEvent_OnbuttonEdit(sender, e);
             }
         }
     }

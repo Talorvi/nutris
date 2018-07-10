@@ -39,7 +39,7 @@
             this.buttonEditTodayDiet = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.chartMyDream = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartMyNutriens = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxUserData = new System.Windows.Forms.GroupBox();
             this.labelUserCaloriesDemand = new System.Windows.Forms.Label();
             this.labelcaloriesdemand = new System.Windows.Forms.Label();
@@ -48,8 +48,11 @@
             this.linkLabelGotouserprofile = new System.Windows.Forms.LinkLabel();
             this.labelUserHello = new System.Windows.Forms.Label();
             this.labeltodaydiet = new System.Windows.Forms.Label();
+            this.buttonTodayDiet = new System.Windows.Forms.Button();
+            this.buttonWeekDiet = new System.Windows.Forms.Button();
+            this.buttonMonthDiet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartMyDream)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMyNutriens)).BeginInit();
             this.groupBoxUserData.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,23 +99,23 @@
             this.chartMyDream.TabIndex = 3;
             this.chartMyDream.Text = "chartMyDream";
             // 
-            // chart1
+            // chartMyNutriens
             // 
             chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            this.chartMyNutriens.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(383, 18);
-            this.chart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chart1.Name = "chart1";
+            this.chartMyNutriens.Legends.Add(legend2);
+            this.chartMyNutriens.Location = new System.Drawing.Point(374, 21);
+            this.chartMyNutriens.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chartMyNutriens.Name = "chartMyNutriens";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(300, 300);
-            this.chart1.TabIndex = 4;
-            this.chart1.Text = "chartMyNutriens";
-            this.chart1.Visible = false;
+            this.chartMyNutriens.Series.Add(series2);
+            this.chartMyNutriens.Size = new System.Drawing.Size(300, 300);
+            this.chartMyNutriens.TabIndex = 4;
+            this.chartMyNutriens.Text = "chartMyNutriens";
+            this.chartMyNutriens.Visible = false;
             // 
             // groupBoxUserData
             // 
@@ -199,15 +202,45 @@
             this.labeltodaydiet.TabIndex = 11;
             this.labeltodaydiet.Text = "Your diet for today:";
             // 
+            // buttonTodayDiet
+            // 
+            this.buttonTodayDiet.Location = new System.Drawing.Point(689, 210);
+            this.buttonTodayDiet.Name = "buttonTodayDiet";
+            this.buttonTodayDiet.Size = new System.Drawing.Size(75, 33);
+            this.buttonTodayDiet.TabIndex = 12;
+            this.buttonTodayDiet.Text = "Today";
+            this.buttonTodayDiet.UseVisualStyleBackColor = true;
+            // 
+            // buttonWeekDiet
+            // 
+            this.buttonWeekDiet.Location = new System.Drawing.Point(689, 249);
+            this.buttonWeekDiet.Name = "buttonWeekDiet";
+            this.buttonWeekDiet.Size = new System.Drawing.Size(75, 33);
+            this.buttonWeekDiet.TabIndex = 13;
+            this.buttonWeekDiet.Text = "Week";
+            this.buttonWeekDiet.UseVisualStyleBackColor = true;
+            // 
+            // buttonMonthDiet
+            // 
+            this.buttonMonthDiet.Location = new System.Drawing.Point(689, 288);
+            this.buttonMonthDiet.Name = "buttonMonthDiet";
+            this.buttonMonthDiet.Size = new System.Drawing.Size(75, 33);
+            this.buttonMonthDiet.TabIndex = 14;
+            this.buttonMonthDiet.Text = "Month";
+            this.buttonMonthDiet.UseVisualStyleBackColor = true;
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonMonthDiet);
+            this.Controls.Add(this.buttonWeekDiet);
+            this.Controls.Add(this.buttonTodayDiet);
             this.Controls.Add(this.labeltodaydiet);
             this.Controls.Add(this.labelUserHello);
             this.Controls.Add(this.linkLabelGotouserprofile);
             this.Controls.Add(this.groupBoxUserData);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.chartMyNutriens);
             this.Controls.Add(this.chartMyDream);
             this.Controls.Add(this.buttonEditTodayDiet);
             this.Controls.Add(this.listBoxTodayDietProducts);
@@ -217,7 +250,7 @@
             this.Load += new System.EventHandler(this.MainScreen_Load);
             this.Enter += new System.EventHandler(this.MainScreen_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.chartMyDream)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMyNutriens)).EndInit();
             this.groupBoxUserData.ResumeLayout(false);
             this.groupBoxUserData.PerformLayout();
             this.ResumeLayout(false);
@@ -231,7 +264,7 @@
         private System.Windows.Forms.Button buttonEditTodayDiet;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartMyDream;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartMyNutriens;
         private System.Windows.Forms.GroupBox groupBoxUserData;
         private System.Windows.Forms.Label labelcaloriesdemand;
         private System.Windows.Forms.Label labelbmi;
@@ -240,5 +273,8 @@
         private System.Windows.Forms.LinkLabel linkLabelGotouserprofile;
         private System.Windows.Forms.Label labelUserHello;
         private System.Windows.Forms.Label labeltodaydiet;
+        private System.Windows.Forms.Button buttonTodayDiet;
+        private System.Windows.Forms.Button buttonWeekDiet;
+        private System.Windows.Forms.Button buttonMonthDiet;
     }
 }
