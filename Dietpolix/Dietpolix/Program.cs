@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Dietpolix.Classes.Managers;
+using Dietpolix.Models;
+using Dietpolix.Presenters;
+using System;
 using System.Windows.Forms;
 
 namespace Dietpolix
@@ -16,7 +16,10 @@ namespace Dietpolix
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDietpolix());
+            Model model = new Model();
+            FormDietpolix formdietpolix = new FormDietpolix();
+            FormDietpolixPresenter presenter = new FormDietpolixPresenter(model, formdietpolix);
+            Application.Run(formdietpolix);
         }
     }
 }

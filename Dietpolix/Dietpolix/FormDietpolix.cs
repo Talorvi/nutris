@@ -1,49 +1,158 @@
-﻿using System;
+﻿using Dietpolix.Models;
+using Dietpolix.Presenters;
+using Dietpolix.UserControls;
+using Dietpolix.Views;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
+using Dietpolix.Classes.Managers;
+
 
 namespace Dietpolix
 {
-    public partial class FormDietpolix : Form
+    public partial class FormDietpolix : Form, Views.IFormDietpolix
     {
         public FormDietpolix()
         {
             InitializeComponent();
-            DrawPieChart(2,5,3,4,1);
+            OnStart();
+            groupBox.Controls.AddRange(ListOfObjects.ToArray());
+            SetUserControl(2);
+            APIManager api = new APIManager();
         }
-        private void DrawPieChart(int value1, int value2, int value3, int value4, int value5)
+        void IFormDietpolix.SetUserControl(int id)
         {
-            //reset your chart series and legends
-            chart1.Series.Clear();
-            chart1.Legends.Clear();
+            foreach (UserControl usercontrol in groupBox.Controls)
+            {
+                usercontrol.Hide();
+            }
+            groupBox.Controls[id].Show();
+        }
 
-            //Add a new Legend(if needed) and do some formating
-            chart1.Legends.Add("MyLegend");
-            chart1.Legends[0].LegendStyle = LegendStyle.Table;
-            chart1.Legends[0].Docking = Docking.Bottom;
-            chart1.Legends[0].Alignment = StringAlignment.Center;
-            chart1.Legends[0].Title = "MyTitle";
-            chart1.Legends[0].BorderColor = Color.Black;
+        public bool IsTextboxFilled(ErrorProvider errorprovider, List<TextBox> listoftextbox)
+        {
+            foreach (TextBox textbox in listoftextbox)
+            {
+                if (textbox.Text == "")
+                    errorprovider.SetError(textbox, "");
+            }
+            foreach (TextBox textbox in listoftextbox)
+            {
+                if (textbox.Text == "")
+                {
+                    errorprovider.SetError(textbox, "Empty textbox");
+                    return false;
+                }
+                errorprovider.SetError(textbox, "");
+            }
+                return true;
+        }
 
-            //Add a new chart-series
-            string seriesname = "MySeriesName";
-            chart1.Series.Add(seriesname);
-            //set the chart-type to "Pie"
-            chart1.Series[seriesname].ChartType = SeriesChartType.Pie;
+        public void SetUserControl(int id)
+        {
+            foreach (UserControl usercontrol in groupBox.Controls)
+            {
+                usercontrol.Visible = false;
+                usercontrol.Hide();
+            }
+            groupBox.Controls[id].Visible = true;
+            groupBox.Controls[id].Show();
+        }
 
-            //Add some datapoints so the series. in this case you can pass the values to this method
-            chart1.Series[seriesname].Points.AddXY("MyPointName", value1);
-            chart1.Series[seriesname].Points.AddXY("MyPointName1", value2);
-            chart1.Series[seriesname].Points.AddXY("MyPointName2", value3);
-            chart1.Series[seriesname].Points.AddXY("MyPointName3", value4);
-            chart1.Series[seriesname].Points.AddXY("MyPointName4", value5);
+        public void HideMenu()
+        {
+            if (menuStrip.Visible == true)
+            {
+                menuStrip.Visible = false;
+            }
+        }
+        public void ShowMenu()
+        {
+            if(menuStrip.Visible == false)
+            {
+                menuStrip.Visible = true;
+            }
+        }
+
+        private List<UserControl> ListOfObjects = new List<UserControl>();
+        Model model = new Model();
+
+        private void OnStart()
+        {
+            model.user = new Classes.User();
+            CalendarScreen calendarscreen = new CalendarScreen(this);            // 0
+            DietScreen dietscreen = new DietScreen(this);                        // 1
+            LoginScreen loginscreen = new LoginScreen(this);                     // 2
+            MainScreen mainscreen = new MainScreen(this);                        // 3
+            RegisterScreen registerscreen = new RegisterScreen(this);            // 4
+            SearchScreen searchscreen = new SearchScreen(this);                  // 5
+            UserProfileScreen userprofilescreen = new UserProfileScreen(this);   // 6
+
+            UserControl[] ArrayOfObjects = { calendarscreen, dietscreen, loginscreen, mainscreen, registerscreen, searchscreen, userprofilescreen };
+            ListOfObjects.AddRange(ArrayOfObjects);
+
+            CalendarScreenPresenter calendarscreenpresenter = new CalendarScreenPresenter(model, (CalendarScreen)ListOfObjects[0]);       
+            DietScreenPresenter dietscreenpresenter = new DietScreenPresenter(model, (DietScreen)ListOfObjects[1]);
+            LoginScreenPresenter loginscreenpresenter = new LoginScreenPresenter(model, (LoginScreen)ListOfObjects[2]);
+            MainScreenPresenter mainscreenpresenter = new MainScreenPresenter(model, (MainScreen)ListOfObjects[3]);                       
+            RegisterScreenPresenter registerscreenpresenter = new RegisterScreenPresenter(model, (RegisterScreen)ListOfObjects[4]);            
+            SearchScreenPresenter searchscreenpresenter = new SearchScreenPresenter(model, (SearchScreen)ListOfObjects[5]);                  
+            UserProfileScreenPresenter userprofilescreenpresenter = new UserProfileScreenPresenter(model, (UserProfileScreen)ListOfObjects[6]);   
+        }
+
+        public event EventHandler VEvent_OnlogOutToolStripMenuItem;
+        public event EventHandler VEvent_OnmyaccountToolStripMenuItem;
+        public event EventHandler VEvent_OnhometoolStripMenuItem;
+        public event EventHandler VEvent_OncalendarToolStripMenuItem;
+        public event EventHandler VEvent_OnsearchToolStripMenuItem;
+        public event EventHandler VEvent_OndietToolStripMenuItem;
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnlogOutToolStripMenuItem != null)
+            {
+                VEvent_OnlogOutToolStripMenuItem(sender, e);
+            }
+        }
+
+        private void myaccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnmyaccountToolStripMenuItem != null)
+            {
+                VEvent_OnmyaccountToolStripMenuItem(sender, e);
+            }
+        }
+
+        private void hometoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnhometoolStripMenuItem != null)
+            {
+                VEvent_OnhometoolStripMenuItem(sender, e);
+            }
+        }
+
+        private void calendarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OncalendarToolStripMenuItem != null)
+            {
+                VEvent_OncalendarToolStripMenuItem(sender, e);
+            }
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OnsearchToolStripMenuItem != null)
+            {
+                VEvent_OnsearchToolStripMenuItem(sender, e);
+            }
+        }
+
+        private void dietToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.VEvent_OndietToolStripMenuItem != null)
+            {
+                VEvent_OndietToolStripMenuItem(sender, e);
+            }
         }
     }
 }
